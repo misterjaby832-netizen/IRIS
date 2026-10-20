@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1440" height="1000" viewBox="0 0 1440 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#232;&#146;&#153;&#231;&#137;&#136; / &#231;&#187;&#132;&#229;&#144;&#136; / &#229;&#156;&#186;&#230;&#153;&#175;&#232;&#146;&#153;&#231;&#137;&#136; / &#230;&#137;&#139;&#230;&#156;&#186;&#228;&#184;&#142;&#233;&#163;&#159;&#231;&#137;&#169;&#232;&#180;&#180;&#231;&#186;&#184; &#194;&#183; 41 &#194;&#183; 418-1392">
+<path d="M1440 0H0V933.628C0 933.628 262.769 785.09 753.635 933.628C1244.5 1082.17 1440 934.991 1440 934.991V0Z" fill="#E4002C"/>
+<path d="M0 0H1440V934.991C1440 934.991 1223.5 1060.97 731 926.012C238.5 791.05 0 933.628 0 933.628V0Z" fill="url(#paint0_linear_0_50)" fill-opacity="0.71"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_50" x1="720.505" y1="18.9295" x2="719.66" y2="1000" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.115385" stop-color="#808080" stop-opacity="0.145"/>
+<stop offset="0.365385" stop-opacity="0.41"/>
+<stop offset="1" stop-opacity="0.29"/>
+</linearGradient>
+</defs>
+</svg>

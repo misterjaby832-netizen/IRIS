@@ -1,0 +1,179 @@
+.current-portfolio{background:#121212;isolation:isolate}
+.current-portfolio p,.current-portfolio h2,.current-portfolio h3{margin:0}
+.cal-overview{color:#fff;font:18px/1.4 KFC,Arial,sans-serif}
+.cal-overview h2{font:900 23px/1.4 KFC,sans-serif;letter-spacing:5.29px;white-space:nowrap}
+.cal-overview-zh{text-align:justify}.cal-overview p+p{margin-top:24px}
+.cal-overview b{font-weight:900}.cal-overview-en{font:300 18px/1.22 KFC,Arial,sans-serif;text-align:justify}
+.cal-overview-label{font:300 23px/1.3 KFC,Arial,sans-serif}
+.cal-copy{font:400 18px/1.4 KFC,Arial,sans-serif;letter-spacing:1.8px;color:#767676;white-space:normal;overflow-wrap:break-word}
+.cal-copy p+p{margin-top:25px}.cal-hashtags{text-decoration:none}.cal-horror-copy{color:white}
+.cal-cards img{display:block;object-fit:cover;border-radius:24px;box-shadow:5px 7px 7.15px #0004}
+.cal-main-comparison{display:flex;overflow:visible}.cal-main-comparison::before{content:'';position:absolute;left:0;right:0;top:-60px;height:60px;background:linear-gradient(90deg,#0878ca 50%,#78b9df 50%)}.cal-main-comparison img{width:50%;height:100%;object-fit:fill;display:block;flex:none}
+.cal-detail img{border-radius:58px;display:block;object-fit:fill}.cal-detail h3{font:900 23px/1.4 KFC,Arial,sans-serif;letter-spacing:5.29px;color:#767676;text-align:right;white-space:nowrap}.cal-detail p{font:400 18px/1.4 KFC,Arial,sans-serif;color:#767676;text-align:right;white-space:nowrap}
+.cal-principle{color:white;text-align:center}.cal-principle h3{font:900 34px/1.22 KFC,Arial,sans-serif;letter-spacing:3.4px}.cal-principle span{font-family:Arial,KFC,sans-serif;white-space:nowrap}.cal-principle p{font:400 14px/1.4 KFC,sans-serif;letter-spacing:1.4px;margin-top:4px}
+.cal-prompt-meta{font:400 14px/1.4 KFC,sans-serif;text-align:right;color:#77756f}
+/* Only published, visible content. Native line boxes replace export-only text trim. */
+.current-portfolio [data-node-id="29:165"],.current-portfolio [data-node-id="949:94"],.current-portfolio [data-node-id="949:98"],.current-portfolio [data-node-id="29:198"],.current-portfolio [data-node-id="915:35"],.current-portfolio [data-node-id="29:159"],.current-portfolio [data-node-id="829:40446"],.current-portfolio [data-node-id="949:42"]{white-space:nowrap;width:max-content;right:auto}
+.current-portfolio [data-node-id="29:174"],.current-portfolio [data-node-id="29:196"],.current-portfolio [data-node-id="29:212"],.current-portfolio [data-node-id="29:185"]{white-space:nowrap}
+.current-portfolio [data-node-id="105:2"],.current-portfolio [data-node-id="901:25"]{white-space:nowrap;width:600px;font-size:14px;color:#b0b0b0}
+.current-portfolio [data-node-id="451:28"]{border:0;background:#fff;height:1797px;border-radius:0 0 58px 58px}
+/* The red band starts below the full rounded edge, never over it. */
+.current-portfolio [data-node-id="289:514"]{top:4380px;height:360px}
+.current-portfolio .cal-principle{top:4510px!important}
+.current-portfolio [data-node-id="941:71"]{display:block;position:absolute;inset:0;width:1440px;height:13159px;transform:translateY(140px);pointer-events:none}
+.current-portfolio [data-node-id="941:71"]>*{pointer-events:auto}
+.current-portfolio [data-node-id="29:140"]{font-size:34px;text-align:center;letter-spacing:3.4px;line-height:1.3}
+.current-portfolio [data-node-id="116:299"],.current-portfolio [data-node-id="116:302"]{font-family:Arial,sans-serif;font-weight:900;line-height:1;font-size:220px}
+.current-portfolio [data-node-id="116:299"]{left:480px;top:2937px}.current-portfolio [data-node-id="116:302"]{left:874px;top:2972px}
+.current-portfolio [data-node-id="29:66"]{white-space:nowrap}
+.current-portfolio [data-node-id="949:42"]{letter-spacing:0}
+.current-portfolio [data-node-id="29:270"]{left:50%;width:300px;translate:-50% 0;text-align:center;white-space:nowrap}
+.current-portfolio [data-node-id="1084:231"]{left:50%;width:440px;translate:-50% 0;text-align:center;white-space:nowrap}
+.current-shell{position:relative;overflow:hidden}
+.current-artboard{position:absolute;inset:0 auto auto 0;width:1440px;height:13299px;transform-origin:0 0}
+.current-artboard>div{height:13299px;width:1440px;overflow:hidden;isolation:isolate}
+/* Stationary colour extensions behind the moving sheets and rounded edges. */
+.current-artboard>div{background:linear-gradient(to bottom,#121212 0px 882px,#c80e32 882px 4740px,#242424 4740px 5398px,#fff 5398px 10912px,#c80e32 10912px 12399px,#242424 12399px 100%)}
+.current-portfolio [data-node-id="1016:32"]{display:none}
+.scroll-panel{position:absolute;left:0;width:1440px;overflow:clip;isolation:isolate;transform-origin:50% 100%;backface-visibility:hidden}
+/* 【可改·案例入场】与首页卡片展开转场衔接，仅作用于首屏封面。 */
+.scroll-panel[data-panel-start="0"]{height:1362px!important;overflow:visible;animation:none;background:transparent!important}
+@keyframes kfc-cover-open{from{opacity:.78;scale:.96}to{opacity:1;scale:1}}
+@media(prefers-reduced-motion:reduce){.scroll-panel[data-panel-start="0"]{animation:none}}
+.scroll-panel-design{position:absolute;left:0;width:1440px;height:13159px}
+/* Apply the scene mask once, in the artboard coordinate space. A mask on each
+   rotated sticker rotates the mask too and cuts across the food incorrectly. */
+.current-portfolio [data-node-id="407:1359"]{display:block;position:absolute;inset:0;width:1440px;height:13159px;transform:none;translate:none;mask-image:url('/kfc/assets/oct-img4143020.svg');mask-size:1440px 1000px;mask-position:0 1733px;mask-repeat:no-repeat;-webkit-mask-image:url('/kfc/assets/oct-img4143020.svg');-webkit-mask-size:1440px 1000px;-webkit-mask-position:0 1733px;-webkit-mask-repeat:no-repeat}
+.current-portfolio [data-node-id="407:1359"] [style*="mask"]{mask-image:none!important;-webkit-mask-image:none!important}
+.current-portfolio [data-node-id="1101:265"]{display:none}
+.current-portfolio [data-node-id="400:1339"]{background:linear-gradient(#e4002c,#aa0f2d);mask-image:url('/kfc/assets/oct-img4143020.svg');mask-size:100% 100%;mask-repeat:no-repeat}
+.current-portfolio [data-node-id="400:1339"]>img{visibility:hidden}
+.current-portfolio [data-node-id="29:49"]{white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;width:210px!important;right:auto!important;font-family:ui-monospace,'SFMono-Regular',Consolas,monospace;letter-spacing:-7px;line-height:1.2}
+.current-portfolio [data-node-id="29:57"] p{white-space:nowrap}
+.current-portfolio [data-node-id="64:20"] p{white-space:nowrap;word-break:normal}
+.current-portfolio [data-node-id="8:8"]{width:260px;white-space:nowrap}
+.current-portfolio [data-node-id="993:3"]{white-space:nowrap;right:auto;width:85px}
+.current-portfolio [data-node-id="29:140"]{white-space:nowrap;width:510px;left:calc(50% - 255px)}
+/* Figma's quarter-turn image fill exports invalid negative dimensions. Preserve the visible upright artwork and exact card centers. */
+.current-portfolio [data-node-id="91:294"]>div>div{rotate:var(--card-angle);width:301px;height:400px}
+.current-portfolio [data-node-id="91:294"]>div>div>div{width:301px;height:400px}
+.current-portfolio [data-node-id="91:285"]{--card-angle:-5deg}
+.current-portfolio [data-node-id="91:288"]{--card-angle:3deg}
+.current-portfolio [data-node-id="91:290"]{--card-angle:-4deg}
+.current-portfolio [data-node-id="91:292"]{--card-angle:4deg}
+.current-portfolio [data-node-id="91:294"] img{width:100%;height:100%;inset:0;object-fit:cover}
+.current-portfolio [data-node-id="29:68"]{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.current-glass-field{position:absolute;left:854px;top:0;width:586px;height:886px;overflow:hidden;pointer-events:none}
+.current-blob{position:absolute;background:#726e60;filter:blur(21px);border-radius:45% 55% 62% 38% / 54% 36% 64% 46%;will-change:transform,border-radius;animation:current-liquid 12s ease-in-out infinite}
+.current-blob.primary{left:-80px;top:5px;width:710px;height:865px;opacity:.72}
+.current-blob.secondary{left:15px;top:180px;width:570px;height:655px;background:#c0b7a1;opacity:.48;animation-duration:17s;animation-delay:-6s;animation-direction:reverse}
+@keyframes current-liquid{0%,100%{transform:translate(-28px,-38px) rotate(-12deg) scale(.94,1.04);border-radius:45% 55% 62% 38% / 54% 36% 64% 46%}33%{transform:translate(28px,42px) rotate(19deg) scale(1.09,.84);border-radius:67% 33% 36% 64% / 37% 61% 39% 63%}66%{transform:translate(-40px,12px) rotate(-17deg) scale(.86,1.06);border-radius:31% 69% 57% 43% / 68% 38% 62% 32%}}
+.current-feed{position:absolute;left:-4px;top:11130px;width:1444px;height:1129px;display:flex;gap:14px;padding-left:12px;overflow:hidden;mask-image:linear-gradient(transparent,#000 35px,#000 calc(100% - 35px),transparent);-webkit-mask-image:linear-gradient(transparent,#000 35px,#000 calc(100% - 35px),transparent)}
+.current-feed-column{flex:0 0 274px;clip-path:inset(var(--offset) 0 0)}
+.current-feed-track{transform:translate3d(0,calc(var(--offset) - var(--loop)),0);animation:current-feed-up var(--duration) linear infinite;animation-play-state:paused;will-change:transform}
+.feed-active .current-feed-track{animation-play-state:running}
+.current-feed-set{display:flex;flex-direction:column;gap:15px;padding-bottom:15px}
+.current-feed-set img{display:block;width:274px;height:366px;object-fit:cover;flex:none}
+@keyframes current-feed-up{to{transform:translate3d(0,calc(var(--offset) - var(--loop) * 2),0)}}
+.current-keyword{position:absolute;opacity:0;visibility:hidden;z-index:5}
+.current-keyword.idea{left:232px;top:2041.28px;width:278px}
+.current-keyword.brand{left:186px;top:2291.6px;width:329px}
+.current-keyword.meme{left:971px;top:2200.66px;width:278px}
+.current-keyword-button{width:100%;height:68.579px;background:#faf9f6;border:0;border-radius:61px;color:#e4002c;letter-spacing:4.08px;font:900 34px/1 KFC,Arial,sans-serif;white-space:nowrap;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s}
+.current-keyword-button:hover,.current-keyword-button:focus-visible{transform:scale(1.09);box-shadow:0 12px 30px #6a00132a}
+.current-keyword-button:focus-visible{outline:3px solid white;outline-offset:7px}
+.account-done .current-keyword{visibility:visible;animation:current-pop .38s cubic-bezier(.2,.8,.25,1.15) both}
+.account-done .current-keyword.brand{animation-delay:.08s}.account-done .current-keyword.meme{animation-delay:.16s}
+@keyframes current-pop{from{opacity:0;transform:translateY(15px) scale(.87)}to{opacity:1;transform:none}}
+.current-meme{position:absolute;bottom:92px;left:0;right:0;color:#fff;text-align:center;font:900 60px/1.2 KFC,sans-serif;animation:current-pop .3s ease-out}
+.quiet-reveal,.quiet-reveal.in-view{opacity:1;filter:none;transition:none}
+.account-scene{position:absolute;left:0;top:1733px;width:1440px;height:1000px;isolation:isolate}
+.account-clipped{position:absolute;inset:0;clip-path:url(#account-wave);background:#e4002c url('/kfc/assets/figma-account-current.svg') center/100% 100% no-repeat}
+.account-stripes{position:absolute;left:583.199px;top:0;display:flex;gap:55px;height:991.82px}.account-stripes i{display:block;width:55px;background:#fff}
+.account-scene .account-phone{position:absolute;left:426.559px;top:202.818px;width:588.105px;height:1216.699px;transform:none;opacity:1;overflow:visible;will-change:auto}
+.account-phone-motion{position:absolute;inset:0;overflow:hidden;opacity:0;will-change:transform,opacity}.account-phone-motion img{position:absolute;width:110.85%;height:143.75%;max-width:none;left:-3.3%;top:-25.09%}
+.account-food{position:absolute;display:flex;align-items:center;justify-content:center;opacity:0;will-change:transform,opacity}.account-food-rotation{flex:none;position:relative;overflow:hidden}.account-food img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}.account-food[data-food="nuggets"] img{position:absolute;height:130.99%;top:-10.32%}
+.current-portfolio .account-heading{position:absolute;left:126px;top:69.64px;font:900 23px/1.02 KFC,Arial,sans-serif;letter-spacing:2.76px;color:white}.account-heading::before{content:'';position:absolute;left:-18px;top:-7.16px;width:6px;height:70.627px;background:white}.account-heading span{font-family:Arial,sans-serif}
+.account-scene .current-keyword.idea{top:308.28px}.account-scene .current-keyword.brand{top:558.6px}.account-scene .current-keyword.meme{top:467.66px}
+.account-bottom-trigger{position:absolute;left:50%;top:420px;width:1px;height:1px;pointer-events:none}
+.account-done .account-scene .current-keyword{animation:account-keyword-in .7s cubic-bezier(.22,.65,.25,1) both}.account-done .account-scene .current-keyword.brand{animation-delay:.12s}.account-done .account-scene .current-keyword.meme{animation-delay:.24s}
+@keyframes account-keyword-in{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.keyword-words{position:absolute;bottom:92px;left:50%;transform:translateX(-50%);display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 22px;justify-content:center;width:350px;pointer-events:none}
+.keyword-words span{padding:0;border:0;background:none;color:#fff;font:600 25px/1.25 KFC,Arial,sans-serif;white-space:nowrap;letter-spacing:1px;animation:keyword-word-pop .38s cubic-bezier(.2,.75,.3,1.15) both}
+.keyword-words span:first-child{flex-basis:100%;text-align:center;font-size:34px}.keyword-words span:nth-child(2){font-size:22px}.keyword-words span:nth-child(3){font-size:26px}
+@keyframes keyword-word-pop{from{opacity:0;transform:translateY(12px) scale(.9)}to{opacity:1;transform:none}}
+.screening-panel{border-radius:58px 58px 0 0}
+.refinement-panel{border-radius:58px}
+.screening-image{transition:transform .3s cubic-bezier(.2,.7,.2,1);transform-origin:center}
+.screening-image:hover,.screening-image:focus-within{transform:translateY(-8px) scale(1.025)}
+.screening-image-trigger{position:absolute;inset:-3%;z-index:1;border:0;padding:0;background:transparent;cursor:zoom-in;border-radius:8px}
+.screening-image-trigger:focus-visible{outline:2px solid #c80e32;outline-offset:5px}
+.gallery-image-wrap{position:relative;line-height:0;flex:none}
+.gallery-image-wrap.magnifiable{pointer-events:auto;cursor:crosshair;overflow:hidden;border-radius:8px}
+.image-magnifier{position:absolute;width:180px;height:180px;transform:translate(-50%,-50%);border:1px solid #fff9;border-radius:50%;box-shadow:0 5px 22px #0005;pointer-events:none;background-repeat:no-repeat;z-index:2}
+.visual-card{padding:0;border:0;background:transparent;cursor:zoom-in;transform:rotate(var(--card-rotation));transition:transform .35s cubic-bezier(.2,.7,.2,1);border-radius:24px}
+.visual-card img{width:100%;height:100%;object-fit:cover}.visual-card:hover,.visual-card:focus-visible{transform:rotate(0deg) translateY(-12px) scale(1.025);z-index:2}.visual-card:focus-visible{outline:4px solid #c80e32;outline-offset:8px}
+.visual-gallery{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:70px 80px;border:0;background:#141414f5;color:#fff;overflow:hidden;font-family:KFC,Arial,sans-serif}
+.visual-gallery[open]{display:flex;align-items:center;justify-content:center}.visual-gallery::backdrop{background:#111c}
+.gallery-figure{margin:0;display:flex;flex-direction:column;align-items:center;max-width:100%;pointer-events:none}.gallery-figure img{max-height:calc(100dvh - 170px);max-width:calc(100vw - 170px);width:auto;height:auto;object-fit:contain;border-radius:8px;animation:gallery-image-in .25s ease-out}.gallery-figure figcaption{display:flex;justify-content:space-between;gap:32px;width:100%;margin-top:20px;font-size:14px;color:#fff9}.gallery-figure figcaption span{font-family:Arial,sans-serif}
+.gallery-close,.gallery-arrow{position:absolute;border:0;border-radius:0;background:transparent;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:opacity .15s}.gallery-close{right:26px;top:22px;font:36px/1 Arial;width:48px;height:48px}.gallery-arrow{top:calc(50% - 27px);width:54px;height:54px;font:36px/1 Arial}.gallery-arrow.previous{left:26px}.gallery-arrow.next{right:26px}.gallery-arrow:hover,.gallery-close:hover{opacity:.65}.visual-gallery button:focus-visible{outline:1px solid #fff8;outline-offset:3px}
+@keyframes gallery-image-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.message-bubble{opacity:0;transform:translateY(18px) scale(.86);transform-origin:50% 100%}.messages-visible .message-bubble{animation:message-pop .55s cubic-bezier(.16,.85,.3,1.2) var(--bubble-delay) both}
+.current-portfolio [data-node-id="837:11"]>div{transition:scale .25s cubic-bezier(.2,.7,.2,1);transform-origin:center}
+@media(hover:hover){.current-portfolio [data-node-id="837:11"]>div:hover{scale:1.035;z-index:2}}
+@keyframes message-pop{0%{opacity:0;transform:translateY(18px) scale(.86)}70%{opacity:var(--bubble-opacity,1);transform:translateY(-3px) scale(1.035)}100%{opacity:var(--bubble-opacity,1);transform:none}}
+.motion-paused .message-bubble,.motion-paused .keyword-words span{animation-play-state:paused}
+@media(max-width:600px){.visual-gallery{padding:70px 16px 95px}.gallery-figure img{max-width:calc(100vw - 32px);max-height:calc(100dvh - 190px)}.gallery-arrow{top:auto;bottom:22px}.gallery-close{right:12px;top:12px}.gallery-figure figcaption{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.visual-card,.card-zoom{transition:none}.message-bubble{animation:none!important;transform:none!important;opacity:var(--bubble-opacity,1)!important}.keyword-words span,.gallery-figure img{animation:none}}
+@media(prefers-reduced-motion:reduce){.screening-image,.current-portfolio [data-node-id="837:11"]>div{transition:none}}
+@media(prefers-reduced-motion:reduce){.account-food,.account-phone-motion{opacity:1!important;transform:none!important}.quiet-reveal{filter:none}.account-done .account-scene .current-keyword{animation:none;opacity:1}}
+.current-portfolio.motion-paused .current-blob,.current-portfolio.motion-paused .current-feed-track,.current-portfolio.motion-paused .current-keyword{animation-play-state:paused}
+.build-label{position:fixed;left:14px;bottom:14px;z-index:10;color:#fff9;font:10px/1 Arial,sans-serif;letter-spacing:1px;mix-blend-mode:difference;pointer-events:none}
+@media(max-width:600px){.current-portfolio .motion-toggle{font-size:11px;padding:8px 12px}.build-label{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.current-blob,.current-feed-track,.account-done .current-keyword,.current-meme{animation:none}.current-keyword{opacity:1;visibility:visible}.quiet-reveal{opacity:1;transition:none}.current-keyword-button{transition:none}}
+
+/* KFCnew：精修卡片以设计稿 1440px 画板为单位，整个红色方块单独做滚动滞后。 */
+.cal-detail{position:absolute;background:#c80e32;border-radius:111px;box-shadow:0 4px 20.6px 9px #0004;will-change:transform}
+.cal-detail img{position:absolute;left:128.5px;top:127.5px;width:670px;height:670px;border-radius:58px;box-shadow:0 4px 16.6px #0008;object-fit:cover}
+.cal-detail h3{position:absolute;left:0;right:0;top:55px;color:#fff;text-align:center;font:900 23px/1.4 KFC,sans-serif;letter-spacing:5.29px}
+.cal-detail p{position:absolute;left:50px;right:50px;top:838px;color:#fff;text-align:center;font:400 18px/1.4 KFC,sans-serif;white-space:normal}
+.refinement-labels span{position:absolute;color:#e4002c;font:900 24px/1.4 KFC,sans-serif}
+.refinement-caption{position:absolute;left:0;width:1440px;text-align:center;color:#e4002c;font:500 12px/1.4 Arial,sans-serif}
+.current-artboard,.current-artboard>div{height:12678px}
+.current-artboard>div{background:linear-gradient(to bottom,#121212 0px 882px,#c80e32 882px 4740px,#242424 4740px 5538px,#fff 5538px 7239px,#242424 7239px 11663px,#c80e32 11663px 100%)}
+/* 图片列在精修框的底部被裁切；保留既有自动滚动速度，不再向框内渐隐。 */
+.current-feed{top:11383px;height:1015px;mask:none;-webkit-mask:none}
+.current-feed-column{clip-path:inset(0)}
+.current-portfolio a[data-node-id="416:1381"],.current-portfolio a[data-node-id="941:53"]{display:block;cursor:pointer}
+.current-portfolio a[data-node-id="416:1381"]:focus-visible,.current-portfolio a[data-node-id="941:53"]:focus-visible{outline:3px solid #e4002c;outline-offset:5px}
+
+/* 可调整：标题中英文的行距；原稿渐变按 800.166px 原始高度铺放。 */
+.account-clipped{background:linear-gradient(to bottom,transparent 799px,#ad102e 799px),url('/kfc/assets/figma-account-gradient.svg') center top/1440px 800.166px no-repeat,#ad102e}
+.current-portfolio .account-heading{left:144px;line-height:1.3}
+.account-heading span{display:inline-block;margin-top:7px}
+.account-heading::before{left:-36px}
+.current-portfolio [data-node-id="451:29"]{height:900px}
+/* 图片仅裁掉外沿 2px，保留内部对比分隔线。 */
+.cal-detail-image{position:absolute;left:128.5px;top:127.5px;width:670px;height:670px;border-radius:58px;overflow:hidden;box-shadow:0 4px 16.6px #0008}
+.cal-detail .cal-detail-image img{left:-2px;top:-2px;width:674px;height:674px;border-radius:0;box-shadow:none;border:0}
+/* 二维码悬停轻微抬升并显示红色轮廓；点击仍打开原帖。 */
+.current-portfolio a[data-node-id="416:1381"],.current-portfolio a[data-node-id="941:53"]{transition:translate .2s ease,box-shadow .2s ease;outline-offset:5px}
+.current-portfolio a[data-node-id="416:1381"]:hover,.current-portfolio a[data-node-id="941:53"]:hover{translate:0 -5px;outline:2px solid #e4002c;box-shadow:0 7px 16px #0003}
+@media(prefers-reduced-motion:reduce){.current-portfolio a[data-node-id="416:1381"],.current-portfolio a[data-node-id="941:53"]{transition:none}}
+
+/* 二维码保持在数据展示层之上，避免透明容器拦截悬停与点击。 */
+.current-portfolio a[data-node-id="416:1381"],.current-portfolio a[data-node-id="941:53"]{z-index:5;pointer-events:auto}
+.current-portfolio [data-node-id="949:11"]{pointer-events:none}
+/* 可调整：数据说明的文字底部，与右侧二维码可见底部对齐。 */
+.current-portfolio [data-node-id="105:2"]{top:65px;height:14px;line-height:14px}
+
+.current-portfolio{opacity:1}
+html:has(.case-cover-ready),html:has(.case-cover-ready) body{background:#121212!important}
+
+/* Latest Figma series gradient ends on the footer black. */
+.current-portfolio [data-node-id="29:316"]{top:10887px;bottom:auto;left:0;right:auto;width:1440px;height:1511px}
+.current-artboard>div{background:linear-gradient(to bottom,#121212 0px 882px,#c80e32 882px 4740px,#242424 4740px 5538px,#fff 5538px 7239px,#242424 7239px 11663px,#c80e32 11663px 12398px,#121212 12398px 100%)}
+
+/* Latest Figma 29:316: continuous red-to-charcoal beneath the moving feed. */
+.current-portfolio .feed-gradient{position:absolute;left:0;top:10887px;width:1440px;height:1511px;pointer-events:none}
+.feed-gradient img{display:block;width:1440px;height:1511px}

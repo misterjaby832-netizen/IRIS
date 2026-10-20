@@ -1,0 +1,73 @@
+/* Case entrance shared with the KFC cover: black asset-loading veil, logo handoff,
+   then the ground, glass, and cover copy arrive in the same staggered order. */
+.iris-page-loader{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;background:transparent;pointer-events:auto}
+.iris-loader-backdrop{position:absolute;inset:0;background:#121212}
+.iris-loading-mark{position:relative;width:150px;height:84px;display:grid;place-items:center;transform-origin:center;will-change:transform;z-index:1}
+.iris-loading-logo,.iris-loading-still{position:absolute;display:block;width:150px;height:auto}
+.iris-loading-still{opacity:0}
+.loader-departing .iris-loading-logo{opacity:0}
+.loader-departing .iris-loading-still{opacity:1}
+.iris-load-error{position:relative;z-index:2;color:#eee;text-align:center;font:14px/1.5 Arial,sans-serif}
+.iris-load-error button{padding:8px 18px;border:1px solid #aaa;border-radius:20px;background:none;color:inherit;cursor:pointer}
+.iris-buffering{position:absolute;left:50%;top:50%;z-index:2;width:26px;height:26px;margin:-13px;border:2px solid #ffffff40;border-top-color:#fff;border-radius:50%;animation:iris-buffer-spin .8s linear infinite;pointer-events:none}
+@keyframes iris-buffer-spin{to{transform:rotate(360deg)}}
+
+.iris-case-entry .iris-navigation{opacity:0;pointer-events:none}
+.iris-case-entry.nav-arriving .iris-navigation{opacity:1;pointer-events:none}
+.iris-case-entry.nav-arriving .iris-navigation>*{pointer-events:auto}
+.iris-case-entry .iris-nav-logo{opacity:0}
+.iris-case-entry.nav-logo-ready .iris-nav-logo{opacity:1}
+.iris-case-entry.nav-arriving .iris-menu-toggle,.iris-case-entry.nav-arriving .iris-contact{opacity:0;animation:kfc-copy-in .4s ease .55s both}
+
+.iris-case-entry #frame-334-890 [data-node-id="347:1155"],
+.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:109"]{opacity:0}
+.iris-case-entry #frame-334-890 [data-node-id="347:1159"],
+.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:113"]{opacity:0}
+.iris-case-entry #frame-334-890 [data-node-id="347:1154"],
+.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:118"]{opacity:0}
+.iris-case-entry #frame-334-890 [data-node-id="347:1168"]>*,
+.iris-case-entry #frame-334-890 [data-node-id="1834:14"]>*,
+.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:123"]>*,
+.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="1840:61"]>*{opacity:0}
+.iris-case-entry #frame-334-890 [data-node-id="347:1157"],
+.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:111"]{opacity:0}
+
+.iris-case-entry.case-cover-ready #frame-334-890 [data-node-id="347:1155"],
+.iris-case-entry.case-cover-ready #frame-334-890 [data-node-id="347:1159"],
+.iris-case-entry.case-cover-ready .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:109"],
+.iris-case-entry.case-cover-ready .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:113"]{animation:kfc-slide-in .68s cubic-bezier(.22,.7,.2,1) both}
+.iris-case-entry.case-cover-ready #frame-334-890 [data-node-id="347:1154"],
+.iris-case-entry.case-cover-ready .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:118"]{animation:kfc-glass-in .72s cubic-bezier(.22,.7,.2,1) .28s both}
+.iris-case-entry.case-cover-ready #frame-334-890 [data-node-id="347:1168"]>*,
+.iris-case-entry.case-cover-ready .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:123"]>*,
+.iris-case-entry.case-cover-ready #frame-334-890 [data-node-id="347:1157"],
+.iris-case-entry.case-cover-ready .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:111"]{animation:kfc-copy-in .44s ease .85s both}
+.iris-case-entry.case-cover-ready #frame-334-890 [data-node-id="1834:14"]>*,
+.iris-case-entry.case-cover-ready .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="1840:61"]>*{animation:kfc-copy-in .44s ease .85s both}
+@keyframes kfc-slide-in{from{opacity:0;translate:110px 0}to{opacity:1;translate:0 0}}
+@keyframes kfc-glass-in{from{opacity:0;translate:180px 0}to{opacity:1;translate:0 0}}
+@keyframes kfc-copy-in{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ .iris-loading-mark{transform:none!important}
+ .iris-case-entry .iris-navigation,.iris-case-entry .iris-nav-logo,.iris-case-entry .iris-menu-toggle,.iris-case-entry .iris-contact{opacity:1!important;animation:none!important}
+ .iris-case-entry #frame-334-890 [data-node-id="347:1155"],.iris-case-entry #frame-334-890 [data-node-id="347:1159"],.iris-case-entry #frame-334-890 [data-node-id="347:1154"],.iris-case-entry #frame-334-890 [data-node-id="347:1168"]>*,.iris-case-entry #frame-334-890 [data-node-id="1834:14"]>*,.iris-case-entry #frame-334-890 [data-node-id="347:1157"],
+ .iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:109"],.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:113"],.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:118"],.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:123"]>*,.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="1840:61"]>*,.iris-case-entry .cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:111"]{opacity:1!important;animation:none!important;translate:0 0}
+}
+
+/* The PNG covers keep the descriptor on one line and center each value in the glass panel. */
+#frame-334-890 [data-node-id="1834:25"],.cluebie-artboard [data-node-id="1840:72"]{left:854px;right:0;top:140px;width:auto;text-align:center;white-space:nowrap}
+#frame-334-890 [data-node-id="1834:17"],#frame-334-890 [data-node-id="1834:19"],#frame-334-890 [data-node-id="1834:21"],
+.cluebie-artboard [data-node-id="1840:64"],.cluebie-artboard [data-node-id="1840:66"],.cluebie-artboard [data-node-id="1840:68"]{left:854px;right:0;width:auto;text-align:center;white-space:nowrap}
+#frame-334-890 [data-node-id="1834:21"]{right:14px}
+/* Keep each brand heading and name on the same glass-panel centerline. */
+#frame-334-890 [data-node-id="1834:18"],.cluebie-artboard [data-node-id="1840:65"]{left:854px;right:0;width:auto;text-align:center;white-space:nowrap}
+#frame-334-890 [data-node-id="347:1154"],.cluebie-artboard>[data-node-id="114:2"]>[data-node-id="477:106"] [data-node-id="477:118"]{background:rgba(155,145,123,.22);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+
+/* Keep the ground visible through the frosting instead of covering it with the exported tint. */
+#frame-334-890 [data-node-id="347:1154"]>img,.cluebie-artboard [data-node-id="477:118"]>img{visibility:hidden}
+
+html:not(.iris-entry-ready),html:not(.iris-entry-ready) body{background:#121212!important}
+
+/* Reveal a composed cover behind a single fading veil, without flight or slides. */
+.iris-fade-entry :is(#frame-334-890,[data-node-id="477:106"],.kfc-cover,.iris-navigation),
+.iris-fade-entry :is(#frame-334-890,[data-node-id="477:106"],.kfc-cover,.iris-navigation) *{animation:none!important;opacity:1!important;translate:none!important}

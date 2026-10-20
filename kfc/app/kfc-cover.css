@@ -1,0 +1,74 @@
+@font-face{font-family:CoverMono;src:url('/kfc/fonts/roboto-mono.ttf');font-weight:100 900;font-display:swap}
+@font-face{font-family:CoverInter;src:url('/kfc/fonts/inter.woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:CoverAlibaba2;src:url('/kfc/fonts/alibaba-2-regular.ttf');font-display:swap}
+.kfc-cover{position:absolute;left:0;top:0;width:1440px;height:1362px;color:#fff;overflow:visible}
+.kfc-cover p{position:absolute;margin:0;white-space:nowrap;line-height:normal}
+.kfc-cover-base{position:absolute;left:913px;top:127px;width:441px;height:647px}
+.kfc-cover-ground{position:absolute;inset:0;overflow:visible}
+/* Mirror the ground edge outside the moving layer, so its slide never uncovers a black strip. */
+.kfc-cover-ground::before{content:'';position:absolute;left:-480px;top:-4px;width:481px;height:890px;background:linear-gradient(to left,#121212,transparent 70%),url('/kfc/assets/kfc-cover-ground-latest.png') -1px -235px/1466px 1360px no-repeat;transform:scaleX(-1);filter:blur(2px);pointer-events:none}
+.kfc-cover-ground-crop{position:absolute;left:-82px;top:-4px;width:1547px;height:890px;filter:blur(2px);overflow:hidden}
+.kfc-cover-ground-crop img{position:absolute;left:5.23%;top:-26.36%;width:94.77%;height:152.79%;max-width:none}
+.kfc-cover-brand{position:absolute;left:379px;top:446px;width:475px;height:436px;overflow:hidden;filter:blur(4.95px)}
+.kfc-cover-brand img{position:absolute;left:-11.9px;top:-.9px;max-width:none}
+.kfc-cover-glass{position:absolute;left:854px;top:-4px;width:586px;height:890px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.current-portfolio .kfc-cover [data-node-id="29:68"]{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.kfc-cover-number,.kfc-cover-copy{position:absolute;inset:0;pointer-events:none}
+.cover-number{left:65px;top:358px;font:700 140px/normal CoverMono,monospace}
+.cover-selected{left:266px;top:430px;font:900 23px/normal CoverInter,Arial,sans-serif}
+.cover-caption{left:265px;top:467.104px;font:400 14px/normal CoverInter,Arial,sans-serif}
+.cover-tagline{left:1007px;top:138px;font:400 14px/normal CoverInter,Arial,sans-serif}
+.cover-type-label{left:1115px;top:280px;font:900 23px/normal KFC,sans-serif}
+.cover-type{left:1087px;top:360px;font:400 23px/normal KFC,sans-serif;letter-spacing:5.29px}
+.cover-brand-label{left:1116px;top:439.973px;font:900 24px/normal KFC,sans-serif}
+.cover-brand-name{left:1117px;top:487px;font:400 23px/normal CoverInter,Arial,sans-serif}
+.cover-role-label{left:1117px;top:569.973px;font:900 23px/normal KFC,sans-serif}
+.cover-role{left:1084px;top:615px;font:400 23px/normal CoverAlibaba2,KFC,sans-serif}
+/* Animate layers independently, leaving the scroll-panel transform untouched. */
+.kfc-cover-ground,.kfc-cover-brand,.kfc-cover-number,.kfc-cover-base,.kfc-cover-glass,.kfc-cover-copy{opacity:0}
+.case-cover-ready .kfc-cover-ground,.case-cover-ready .kfc-cover-brand{animation:kfc-slide-in .68s cubic-bezier(.22,.7,.2,1) both}
+.case-cover-ready .kfc-cover-base,.case-cover-ready .kfc-cover-glass{animation:kfc-glass-in .72s cubic-bezier(.22,.7,.2,1) .28s both}
+.case-cover-ready .kfc-cover-number,.case-cover-ready .kfc-cover-copy{animation:kfc-copy-in .44s ease .85s both}
+@keyframes kfc-slide-in{from{opacity:0;translate:110px 0}to{opacity:1;translate:0 0}}
+@keyframes kfc-glass-in{from{opacity:0;translate:180px 0}to{opacity:1;translate:0 0}}
+@keyframes kfc-copy-in{from{opacity:0}to{opacity:1}}
+.iris-navigation{opacity:0;pointer-events:none}
+body:has(.nav-arriving) .iris-navigation{opacity:1;animation:none}
+body:has(.nav-arriving) .iris-navigation>*{pointer-events:auto}
+body:has(.nav-arriving) .iris-nav-logo{opacity:0}
+body:has(.nav-logo-ready) .iris-nav-logo{opacity:1}
+body:has(.nav-arriving) .iris-menu-toggle,body:has(.nav-arriving) .iris-contact{animation:kfc-copy-in .4s ease .55s both}
+@media(prefers-reduced-motion:reduce){.kfc-cover>*{opacity:1!important;animation:none!important}.iris-navigation{opacity:1;animation:none!important}}
+.kfc-entry-loader{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;background:transparent;pointer-events:auto}
+.iris-loading-word{display:flex;align-items:baseline;color:#fff;gap:1px;font:italic 900 48px/1 Georgia,serif;letter-spacing:-4px;padding-right:4px}
+.iris-loading-word span{display:inline-block;animation:iris-letter-hop 1.15s ease-in-out infinite;animation-delay:calc(var(--letter-index)*.12s)}
+@keyframes iris-letter-hop{0%,40%,100%{transform:translateY(0)}20%{transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){.iris-loading-word span{animation:none}}
+/* A real frosted texture avoids relying on backdrop-filter across transformed sheets. */
+.current-portfolio .kfc-cover .kfc-cover-glass{overflow:hidden;background:#938872;backdrop-filter:none;-webkit-backdrop-filter:none}
+.kfc-glass-texture{position:absolute;left:-855px;top:-235px;width:1466px;height:1360px;max-width:none;filter:blur(12px);opacity:1}
+.kfc-glass-tint{position:absolute;inset:0;background:rgba(155,145,123,.22)}
+/* Both sides continue beyond the moving sheet, then disappear into the page black. */
+.kfc-cover-extension{position:absolute;left:0;top:882px;width:1440px;height:480px;overflow:hidden;pointer-events:none;background:#938872}
+.kfc-cover-extension::before{content:'';position:absolute;left:-1px;top:-1121px;width:1466px;height:1360px;background:url('/kfc/assets/kfc-cover-ground-latest.png') center/100% 100% no-repeat;filter:blur(2px)}
+.kfc-cover-extension span{position:absolute;left:854px;top:0;right:0;bottom:0;overflow:hidden;background:#938872}
+.kfc-cover-extension span::before{content:'';position:absolute;left:-855px;top:-1121px;width:1466px;height:1360px;background:linear-gradient(#9b917b38,#9b917b38),url('/kfc/assets/kfc-cover-ground-latest.png') center/100% 100% no-repeat;filter:blur(12px)}
+.kfc-cover-extension::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,#12121200,#12121255 35%,#121212 100%)}
+.kfc-cover-extension-top{top:-480px}
+.kfc-cover-extension-top::before,.kfc-cover-extension-top span::before{top:241px}
+.kfc-cover-extension-top::after{background:linear-gradient(to top,#12121200,#12121255 35%,#121212 100%)}
+.kfc-cover-extension{opacity:0}
+.case-cover-ready .kfc-cover-extension{animation:kfc-copy-in .68s ease both}
+.kfc-entry-loader{place-content:center;justify-items:center;pointer-events:auto}
+.iris-loading-mark{position:relative;width:150px;height:84px;display:grid;place-items:center;transform-origin:center;will-change:transform}
+.iris-loading-logo{display:block;width:150px;height:auto}
+.iris-loading-still{position:absolute;width:150px;height:auto;opacity:0}
+.loader-departing .iris-loading-logo{opacity:0}
+.loader-departing .iris-loading-still{opacity:1}
+.iris-load-error{position:relative}
+.iris-load-error{color:#eee;text-align:center;font:14px/1.5 Arial,sans-serif}
+.iris-load-error button{padding:8px 18px;border:1px solid #aaa;border-radius:20px;background:none;color:inherit;cursor:pointer}
+
+/* Reveal a composed cover behind a single fading veil, without flight or slides. */
+.iris-fade-entry :is(#frame-334-890,[data-node-id="477:106"],.kfc-cover,.iris-navigation),
+.iris-fade-entry :is(#frame-334-890,[data-node-id="477:106"],.kfc-cover,.iris-navigation) *{animation:none!important;opacity:1!important;translate:none!important}

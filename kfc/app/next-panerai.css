@@ -1,0 +1,14 @@
+/* 【勿改·结构】封面接在 KFC 页尾之后；滚动时通过裁切窗口自然展开。 */
+.next-panerai{position:relative;overflow:hidden;height:max(100svh,61.25vw);background:#a49b87;isolation:isolate}
+.next-panerai-cover{position:absolute;inset:0;display:block;color:#fff;text-decoration:none;transform:translateY(var(--cover-shift,0px));background:#a49b87}
+.next-panerai-sand{position:absolute;inset:0 40.69% 0 0;background:url('/kfc/assets/panerai-cover-imgRectangle.png') center/cover no-repeat;filter:blur(5.6px);scale:1.025}
+.next-panerai-logo{position:absolute;left:17%;top:37%;width:51%;height:35%;object-fit:contain;filter:blur(5px)}
+.next-panerai-glass{position:absolute;inset:0 0 0 59.31%;background:rgba(255,255,255,.2);backdrop-filter:blur(7px)}
+.next-panerai-number{position:absolute;top:26%;left:4.5%;font:700 9.7vw/1 monospace}
+.next-panerai-selected{position:absolute;top:49%;left:31%;font:900 1.6vw/1.2 Arial,sans-serif}
+.next-panerai-category{position:absolute;top:10%;left:70%;font:400 .97vw/1.2 Arial,sans-serif}
+.next-panerai-meta{position:absolute;top:31%;left:75%;font:400 1.6vw/2.6 Arial,sans-serif;white-space:nowrap}
+.next-panerai-meta p{margin:0}
+.next-panerai-cover:focus-visible{outline:3px solid white;outline-offset:-8px}
+@media(max-width:700px){.next-panerai-number{font-size:15vw}.next-panerai-selected{font-size:2.5vw}.next-panerai-category{font-size:1.8vw}.next-panerai-meta{font-size:2.2vw;left:68%}}
+@media(prefers-reduced-motion:reduce){.next-panerai-cover{transform:none}}

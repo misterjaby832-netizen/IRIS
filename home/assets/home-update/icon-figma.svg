@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="44" height="66" viewBox="0 0 44 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="figma 1" clip-path="url(#clip0_0_14)">
+<path id="Vector" d="M11.0547 66C17.0965 66 22 61.072 22 55V44H11.0547C5.01294 44 0.109453 48.928 0.109453 55C0.109453 61.072 5.01294 66 11.0547 66Z" fill="#A69C8A"/>
+<path id="Vector_2" d="M0.109453 33C0.109453 26.928 5.01294 22 11.0547 22H22V44H11.0547C5.01294 44 0.109453 39.072 0.109453 33Z" fill="#A69C8A"/>
+<path id="Vector_3" d="M0.109453 11C0.109453 4.928 5.01294 0 11.0547 0H22V22H11.0547C5.01294 22 0.109453 17.072 0.109453 11Z" fill="#A69C8A"/>
+<path id="Vector_4" d="M22 0H32.9453C38.9871 0 43.8905 4.928 43.8905 11C43.8905 17.072 38.9871 22 32.9453 22H22V0Z" fill="#A69C8A"/>
+<path id="Vector_5" d="M43.8905 33C43.8905 39.072 38.9871 44 32.9453 44C26.9035 44 22 39.072 22 33C22 26.928 26.9035 22 32.9453 22C38.9871 22 43.8905 26.928 43.8905 33Z" fill="#A69C8A"/>
+</g>
+<defs>
+<clipPath id="clip0_0_14">
+<rect width="44" height="66" fill="white"/>
+</clipPath>
+</defs>
+</svg>
