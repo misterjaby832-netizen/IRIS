@@ -1,4 +1,5 @@
 import {build} from 'vite';
+import {execFileSync} from 'node:child_process';
 import {cp,mkdir,readdir,stat,writeFile} from 'node:fs/promises';
 import path from 'node:path';
 await build({configFile:path.resolve('vite.config.mjs')});
@@ -12,3 +13,5 @@ const oversized=files.filter(f=>f.size>25*1024*1024);
 if(oversized.length)throw Error('Cloudflare 单文件超过 25 MiB: '+JSON.stringify(oversized));
 await writeFile('dist/_headers','/assets/*\n  Cache-Control: public, max-age=3600\n/kfc/assets/*\n  Cache-Control: public, max-age=3600\n/*.html\n  Cache-Control: no-cache\n');
 console.log(`Ready: ${files.length} files, ${(files.reduce((s,f)=>s+f.size,0)/1024/1024).toFixed(1)} MiB; all assets below 25 MiB.`);
+
+await writeFile('dist/deployment-info.json', JSON.stringify({commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),builtAt:new Date().toISOString()}));

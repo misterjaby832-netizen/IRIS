@@ -27,7 +27,7 @@ pnpm build
 
 - Worker 名称：`iris-portfolio-preview`
 - 已创建测试网址：https://iris-portfolio-preview.misterjaby832.workers.dev/
-- 首次部署：Cloudflare Ready；当前浏览器 HTTPS 握手失败，外网可访问性尚未通过验证
+- 首次部署：Cloudflare Ready；HTTPS 已恢复并通过浏览器首页、KFC 页面验证。大陆各运营商及真实手机仍需实测。
 - 静态目录：`dist`
 - 配置：`wrangler.jsonc`
 - 不需要数据库、付费套餐或自购域名
@@ -42,7 +42,7 @@ pnpm exec wrangler deploy
 
 ## 后续连接 GitHub 自动部署
 
-将本目录作为独立私有仓库的根目录。在 Cloudflare 中连接该仓库，生产分支设为 main，构建命令设为 `pnpm build`，部署命令设为 `pnpm exec wrangler deploy`。先让用户完成 Cloudflare GitHub App 的仓库授权。未连接前，推送 GitHub 不会自动更新线上站点。
+将本目录作为独立私有仓库的根目录。在 Cloudflare 中连接该仓库，生产分支设为 main，构建命令设为 `pnpm build`，部署命令设为 `pnpm exec wrangler deploy`。先让用户完成 Cloudflare GitHub App 的仓库授权。当前已连接 `misterjaby832-netizen/IRIS`，生产分支为 `main`。推送后会自动触发构建和部署。
 
 ## 更新源代码
 
