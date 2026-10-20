@@ -7,7 +7,7 @@ let cluebieScale=1;
 function cluebieResize(){cluebieScale=cluebieShell.clientWidth/1440;cluebieArtboard.style.transform=`scale(${cluebieScale})`;cluebieShell.style.height=`${16881*cluebieScale}px`;}
 new ResizeObserver(cluebieResize).observe(cluebieShell);cluebieResize();
 const cluebieReducedPreference=matchMedia('(prefers-reduced-motion: reduce)');
-const cluebieReduced={get matches(){return (window.irisResolution?.phone||matchMedia('(max-width:767px), (pointer:coarse) and (max-width:1024px)').matches)||cluebieReducedPreference.matches;},addEventListener:(...args)=>cluebieReducedPreference.addEventListener(...args)};
+const cluebieReduced={get matches(){return cluebieReducedPreference.matches;},addEventListener:(...args)=>cluebieReducedPreference.addEventListener(...args)};
 let cluebiePrevious=scrollY,cluebieLag=0,cluebieFrame=0,cluebieLast=0;
 function cluebieDraw(time){const elapsed=Math.min(40,time-cluebieLast||16)/16.67;cluebieLast=time;cluebieLag*=Math.pow(cluebieMotion.settle,elapsed);if(Math.abs(cluebieLag)<.1||cluebieReduced.matches)cluebieLag=0;cluebieArtboard.style.setProperty('--cover-extension',`${Math.max(0,cluebieLag)/cluebieScale}px`);cluebieFrames.forEach((node,index)=>node.style.setProperty('--frame-lag',`${index===0||node.dataset.nodeId==='2347:111'?0:cluebieLag/cluebieScale}px`));cluebieFrame=cluebieLag?requestAnimationFrame(cluebieDraw):0;}
 addEventListener('scroll',()=>{const delta=scrollY-cluebiePrevious;cluebiePrevious=scrollY;if(cluebieReduced.matches)return;cluebieLag=Math.max(-cluebieMotion.maxOffset,Math.min(cluebieMotion.maxOffset,cluebieLag+delta*cluebieMotion.strength));if(!cluebieFrame)cluebieFrame=requestAnimationFrame(cluebieDraw);},{passive:true});

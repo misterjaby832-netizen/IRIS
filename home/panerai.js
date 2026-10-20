@@ -10,7 +10,7 @@ let scale=1;
 function resize(){scale=shell.clientWidth/1440;artboard.style.transform=`scale(${scale})`;shell.style.height=`${pageHeight*scale}px`;}
 new ResizeObserver(resize).observe(shell);resize();
 const reducedPreference=matchMedia('(prefers-reduced-motion: reduce)');
-const reduced={get matches(){return (window.irisResolution?.phone||matchMedia('(max-width:767px), (pointer:coarse) and (max-width:1024px)').matches)||reducedPreference.matches;},addEventListener:(...args)=>reducedPreference.addEventListener(...args)};
+const reduced={get matches(){return reducedPreference.matches;},addEventListener:(...args)=>reducedPreference.addEventListener(...args)};
 let previous=scrollY,lag=0,heroLag=0,frame=0,lastTime=0;
 function draw(time){
  const elapsed=Math.min(40,time-lastTime||16)/16.67;
@@ -96,7 +96,6 @@ navDialog.addEventListener('click',event=>{if(event.target===navDialog&&event.cl
 
 // 【可改·设计挑战动效】卡片进入视口后按顺序浮现，滚回时保持稳定。
 const challengeFrame=document.querySelector('#frame-707-2');
-if((window.irisResolution?.phone||matchMedia('(max-width:767px), (pointer:coarse) and (max-width:1024px)').matches))challengeFrame?.classList.add('challenge-visible');
 if(challengeFrame){
  const cards=[
   ['717:22776','717:22782','717:25810'],

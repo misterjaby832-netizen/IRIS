@@ -96,7 +96,7 @@ export default function Experience(){
    const delta=window.scrollY-lastY;lastY=window.scrollY;
    if(paused||reduced.matches){reset();return;}
    const scale=root.clientWidth/WIDTH;
-   cards.forEach((card,i)=>{const rect=card.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight)offsets[i]=Math.max(phoneLight?-32:-64,Math.min(phoneLight?32:64,offsets[i]+delta*(phoneLight?.22:.38)/scale));});
+   cards.forEach((card,i)=>{const rect=card.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight)offsets[i]=Math.max(-64,Math.min(64,offsets[i]+delta*.38/scale));});
    if(!frame)frame=requestAnimationFrame(draw);
   };
   window.addEventListener('scroll',scroll,{passive:true});reduced.addEventListener('change',reset);
@@ -110,7 +110,7 @@ export default function Experience(){
   const stickers=[...root.querySelectorAll('.account-food')];
   const phone=root.querySelector('.account-phone-motion');
   const finish=()=>{root.classList.add('account-done');stickers.forEach(e=>e.style.opacity='1');if(phone){phone.style.opacity='1';phone.style.transform='none';}};
-  if(reduced.matches||phoneLight){finish();return;}
+  if(reduced.matches){finish();return;}
   stickers.forEach(e=>e.style.opacity='0');if(phone){phone.style.opacity='0';phone.style.transform='translateY(850px)';}
   const play=async()=>{
    if(played||stopped)return;played=true;

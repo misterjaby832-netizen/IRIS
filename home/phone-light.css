@@ -1,19 +1,5 @@
-/* Phone-only performance mode. Original artwork coordinates remain unchanged. */
+/* Phone touch targets and image fades. Motion uses the desktop rules. */
 @media(max-width:1024px){
- .phone-light main *{animation:none!important;transition:none!important;will-change:auto!important}
- .phone-light main,.phone-light .panerai-artboard,.phone-light .cluebie-artboard,.phone-light .current-artboard>div{isolation:auto}
- .phone-light .panerai-frame,.phone-light .scroll-panel{translate:none!important;--frame-lag:0px!important;will-change:auto!important;backface-visibility:visible;isolation:auto}
- .phone-light .display-mockup{translate:none!important}
- .phone-light .cluebie-reveal,.phone-light .cluebie-decor-lag,.phone-light .craft-caption{opacity:1!important;transform:none!important;scale:1!important}
- .phone-light .scene-caption,.phone-light .display-copy-fade,.phone-light .annotation-content{opacity:1!important;filter:none!important}
- .phone-light .annotation-leader{clip-path:none!important}
- .phone-light .structure-reveal [data-node-id]{opacity:1!important;filter:none!important}
- .phone-light .structure-reveal [data-node-id="1832:275"],.phone-light .structure-reveal [data-node-id="1834:2"]{transform:none!important}
- .phone-light .challenge-card>*{translate:none!important}
- .phone-light .cluebie-artboard [style*="--scene-shift"]{--scene-shift:0px!important;opacity:1!important}
- .phone-light .message-bubble{opacity:var(--bubble-opacity,1)!important;transform:none!important}
- .phone-light .current-keyword,.phone-light .account-food,.phone-light .account-phone-motion{opacity:1!important;visibility:visible!important}
- .phone-light .account-food,.phone-light .account-phone-motion{transform:none!important}
  .phone-light .display-expand{width:160px;height:160px;left:640px;top:1066px;padding:64px 66px}
  .phone-light .case-next-arrow{min-width:44px;min-height:44px;left:calc(50% - 22px)}
  .phone-light .iris-menu::backdrop,.phone-light .cluebie-compare-dialog::backdrop,.phone-light .cluebie-fullscreen-host{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
@@ -26,12 +12,6 @@
  .phone-light .cluebie-fullscreen-host .cluebie-video-controls button svg{width:24px;height:24px}
  .phone-light .cluebie-fullscreen-host .cluebie-video-time{font-size:12px}
 }
-@media(max-width:1024px){
- .phone-light .kfc-cover-ground,.phone-light .kfc-cover-brand,.phone-light .kfc-cover-number,.phone-light .kfc-cover-base,.phone-light .kfc-cover-glass,.phone-light .kfc-cover-copy,.phone-light .kfc-cover-extension{opacity:1!important;translate:none!important}
- .phone-light #frame-334-890 [data-node-id="347:1155"],.phone-light #frame-334-890 [data-node-id="347:1159"],.phone-light #frame-334-890 [data-node-id="347:1154"],.phone-light #frame-334-890 [data-node-id="347:1168"]>*,.phone-light #frame-334-890 [data-node-id="1834:14"]>*,.phone-light #frame-334-890 [data-node-id="347:1157"],
- .phone-light .cluebie-artboard [data-node-id="477:109"],.phone-light .cluebie-artboard [data-node-id="477:113"],.phone-light .cluebie-artboard [data-node-id="477:118"],.phone-light .cluebie-artboard [data-node-id="477:123"]>*,.phone-light .cluebie-artboard [data-node-id="1840:61"]>*,.phone-light .cluebie-artboard [data-node-id="477:111"]{opacity:1!important;translate:none!important}
-}
-
 @media(max-width:1024px){
  .phone-light main .current-feed-track{animation:phone-feed-up var(--duration) linear infinite!important;animation-play-state:paused!important}
  .phone-light main.feed-active .current-feed-track{animation-play-state:running!important}
