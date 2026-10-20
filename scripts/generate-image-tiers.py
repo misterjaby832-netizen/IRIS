@@ -11,6 +11,7 @@ for base,urlbase,is_kfc in [(root/'home/assets','/assets/',False),(root/'kfc/pub
   with Image.open(source) as raw:
    image=ImageOps.exif_transpose(raw)
    if image.width<=480 and image.height<=1920:continue
+   sharp=source.name in ('477-80-DisplayMockup_imgPan1.webp','final-mockup-figma.png')
    key=urlbase+rel.as_posix();stamp=hashlib.sha1(key.encode()).hexdigest()[:16]
    item={}
    for tier,limits in [('portrait',(480,1920)),('landscape',(960,3840))]:
@@ -20,9 +21,10 @@ for base,urlbase,is_kfc in [(root/'home/assets','/assets/',False),(root/'kfc/pub
     else:
      dest=root/'home/resolution'/tier/(stamp+'.webp');url='/resolution/'+tier+'/'+stamp+'.webp'
     dest.parent.mkdir(parents=True,exist_ok=True)
+    if sharp:limits=(1280,6000) if tier=='portrait' else (1920,6000)
     resized=image.copy();resized.thumbnail(limits)
     if resized.mode not in ('RGB','RGBA'):resized=resized.convert('RGBA' if 'A' in resized.getbands() else 'RGB')
-    resized.save(dest,'WEBP',quality=87,method=4)
+    resized.save(dest,'WEBP',quality=93 if sharp else 87,method=4)
     item[tier]=url
    variants[key]=item
 (root/'home/image-tiers.js').write_text('window.irisImageTiers='+json.dumps(variants,separators=(',',':'))+';\n')

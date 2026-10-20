@@ -1,6 +1,6 @@
 (()=>{
  const variants=window.irisImageTiers||{};
- const phone=document.documentElement.classList.contains('phone-light')||matchMedia('(max-width:767px), (pointer:coarse) and (max-width:1024px)').matches;
+ const phone=matchMedia('(max-width:767px), (pointer:coarse) and (max-width:1024px)').matches;
  const landscape=matchMedia('(orientation:landscape)');
  let tier=landscape.matches?'landscape':'portrait';
  const subscribers=new Set(),images=new Map(),versions=new WeakMap(),probes=new WeakMap();
