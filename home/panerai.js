@@ -146,6 +146,21 @@ expandButton.addEventListener('click',()=>{
  resize();
  requestAnimationFrame(()=>window.scrollTo({top:targetY,behavior:reduced.matches?'instant':'smooth'}));
 });
+// Phone portrait opens the long artwork in place, without a height/scroll animation.
+const portraitBrowse=matchMedia('(orientation:portrait)');
+function enablePortraitBrowse(){
+ if(!window.irisResolution?.phone||!portraitBrowse.matches)return;
+ artboard.classList.add('portrait-direct-browse');
+ if(displayExpanded)return;
+ displayExpanded=true;
+ expandButton.setAttribute('aria-expanded','true');
+ artboard.classList.add('display-expanded');
+ displayDetails.inert=false;responseFrame.inert=false;
+ displayDetails.removeAttribute('aria-hidden');responseFrame.removeAttribute('aria-hidden');
+ pageHeight=displayMotion.fullHeight;resize();
+}
+enablePortraitBrowse();
+portraitBrowse.addEventListener('change',enablePortraitBrowse);
 // 每组：引线、文字与图标。保留原图层，不移动结构分析。
 const annotationGroups=[
  ['2198:202',['2198:199','2198:200','2198:205'],false],

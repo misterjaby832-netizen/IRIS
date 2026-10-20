@@ -35,3 +35,10 @@
  .phone-light .account-food,.phone-light .account-phone-motion{animation:phone-simple-fade .5s ease both!important}
 }
 @keyframes phone-simple-fade{from{opacity:0}to{opacity:1}}
+
+@media(orientation:portrait){
+ .phone-light .portrait-direct-browse .display-expand,
+ .phone-light .portrait-direct-browse .display-fold-edge{display:none!important}
+ .phone-light .portrait-direct-browse .display-mockup{translate:none!important}
+ .phone-light .portrait-direct-browse .display-copy-fade{opacity:1;transition:none}
+}
