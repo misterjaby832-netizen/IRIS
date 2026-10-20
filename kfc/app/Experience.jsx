@@ -13,7 +13,7 @@ const WIDTH=1440,HEIGHT=12678;
 const phoneLight=matchMedia('(max-width:767px)').matches;
 const asset=name=>'/kfc/assets/oct-'+name+'.png';
 const columns=[['img4001318','img4001317','img4001321','img4001328','img685116'],['img4001322','img4001319','img4001329','img4001320','img685115'],['imgRectangle1','img4001323','imgRectangle2','img4001332','img685118'],['img4001324','img4001325','img4001331','img4001330','img685117'],['img4001326','img4001327','img4001333','img4001334','img685119']];
-export function Feed(){return <section className="current-feed" aria-label="KFC社媒创意视觉信息流">{columns.map((items,i)=><div className="current-feed-column" key={i} style={{'--offset':[68.5,30.5,89.5,30.5,68.5][i]+'px','--loop':items.length*381+'px','--duration':[58,69,63,72,61][i]+'s'}}><div className="current-feed-track">{(phoneLight?[0]:[0,1,2]).map(copy=><div className="current-feed-set" key={copy} aria-hidden={copy?true:undefined}>{items.map((name,j)=><ResponsiveImage key={name} src={asset(name)} alt={copy?'':'KFC 创意视觉 '+(i+1)+'-'+(j+1)} width="274" height="366" decoding="async"/>)}</div>)}</div></div>)}</section>}
+export function Feed(){return <section className="current-feed" aria-label="KFC社媒创意视觉信息流">{columns.map((items,i)=><div className="current-feed-column" key={i} style={{'--offset':[68.5,30.5,89.5,30.5,68.5][i]+'px','--loop':items.length*381+'px','--duration':[58,69,63,72,61][i]+'s'}}><div className="current-feed-track">{(phoneLight?[0,1]:[0,1,2]).map(copy=><div className="current-feed-set" key={copy} aria-hidden={copy?true:undefined}>{items.map((name,j)=><ResponsiveImage key={name} src={asset(name)} alt={copy?'':'KFC 创意视觉 '+(i+1)+'-'+(j+1)} width="274" height="366" decoding="async"/>)}</div>)}</div></div>)}</section>}
 export function Glass(){return <div className="current-glass-field" aria-hidden="true"><div className="current-blob primary"/><div className="current-blob secondary"/></div>}
 export function Keywords(){const [open,setOpen]=useState(false);return <><div className="current-keyword idea"><button className="current-keyword-button" type="button">#脑洞感</button></div><div className="current-keyword brand"><button className="current-keyword-button" type="button">#品牌辨识度</button></div><div className="current-keyword meme"><button className="current-keyword-button" aria-expanded={open} aria-controls="meme-message" onClick={()=>setOpen(v=>!v)} type="button">#梗文化</button>{open&&<span className="current-meme" id="meme-message" role="status">疯四。</span>}</div></>}
 
@@ -81,7 +81,6 @@ export default function Experience(){
  },[]);
  // 红色精修卡片按滚动速度轻微滞后，停下后自然回到设计稿位置。
  useEffect(()=>{
-  if(phoneLight)return;
   const root=host.current,cards=[...root.querySelectorAll('.cal-detail')];
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   let frame=0,lastY=window.scrollY,lastTime=0;
@@ -90,14 +89,14 @@ export default function Experience(){
   const draw=(time)=>{
    frame=0;const decay=Math.exp(-Math.min(40,time-lastTime||16)/180);lastTime=time;
    let moving=false;
-   cards.forEach((card,i)=>{offsets[i]*=decay;if(Math.abs(offsets[i])<.08)offsets[i]=0;else moving=true;card.style.transform=`translate3d(0,${offsets[i]}px,0)`;});
+   cards.forEach((card,i)=>{offsets[i]*=decay;if(Math.abs(offsets[i])<.08)offsets[i]=0;else moving=true;card.style.transform=phoneLight?(offsets[i]?`translateY(${offsets[i]}px)`:'none'):`translate3d(0,${offsets[i]}px,0)`;});
    if(moving)frame=requestAnimationFrame(draw);
   };
   const scroll=()=>{
    const delta=window.scrollY-lastY;lastY=window.scrollY;
    if(paused||reduced.matches){reset();return;}
    const scale=root.clientWidth/WIDTH;
-   cards.forEach((card,i)=>{const rect=card.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight)offsets[i]=Math.max(-64,Math.min(64,offsets[i]+delta*.38/scale));});
+   cards.forEach((card,i)=>{const rect=card.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight)offsets[i]=Math.max(phoneLight?-32:-64,Math.min(phoneLight?32:64,offsets[i]+delta*(phoneLight?.22:.38)/scale));});
    if(!frame)frame=requestAnimationFrame(draw);
   };
   window.addEventListener('scroll',scroll,{passive:true});reduced.addEventListener('change',reset);
