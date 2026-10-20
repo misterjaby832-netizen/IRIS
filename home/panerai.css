@@ -2602,7 +2602,7 @@ html:not(.iris-entry-ready),html:not(.iris-entry-ready) body{background:#121212!
 .audience-diagram{position:absolute;inset:0;scale:.62;transform-origin:720px 704px}
 .audience-diagram p{scale:1.612903;transform-origin:left center;line-height:1.45}
 .audience-diagram p.text-center{transform-origin:center center}
-.audience-diagram div:has(>p){overflow:visible}
+.audience-diagram div:has(p){overflow:visible}
 .audience-diagram p.audience-zh{font-size:16px}
 .audience-diagram p.audience-en{font-size:12px;translate:0 9px}
 .audience-diagram p[data-node-id="682:79"],.audience-diagram p[data-node-id="682:80"]{transform-origin:center center}
