@@ -26,7 +26,8 @@ pnpm build
 ## Cloudflare Workers 免费静态部署
 
 - Worker 名称：`iris-portfolio-preview`
-- 免费测试域名：由账号下的 workers.dev 子域分配
+- 已创建测试网址：https://iris-portfolio-preview.misterjaby832.workers.dev/
+- 首次部署：Cloudflare Ready；当前浏览器 HTTPS 握手失败，外网可访问性尚未通过验证
 - 静态目录：`dist`
 - 配置：`wrangler.jsonc`
 - 不需要数据库、付费套餐或自购域名

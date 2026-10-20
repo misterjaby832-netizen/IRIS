@@ -8,7 +8,8 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "vite --config vite.config.mjs",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "react": "19.2.6",

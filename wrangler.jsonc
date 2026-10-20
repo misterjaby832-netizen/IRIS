@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "iris-portfolio-preview",
   "compatibility_date": "2026-10-20",
-  "assets": {"directory": "./dist", "not_found_handling": "404-page"},
-  "workers_dev": true
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "account_id": "37f52212673d98092580b2fdcb6c1541"
 }
