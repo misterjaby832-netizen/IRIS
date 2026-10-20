@@ -15,9 +15,24 @@
   let probe;
   try{
    if(!job.image.isConnected||versions.get(job.image)!==job.version)return;
-   probe=new Image();probes.set(job.image,probe);probe.decoding='async';probe.src=job.src;
-   await probe.decode();
-   if(job.image.isConnected&&versions.get(job.image)===job.version){job.image.src=job.src;job.done=true;}
+   let loaded=false;
+   for(let attempt=0;attempt<3&&!loaded;attempt++){
+    if(versions.get(job.image)!==job.version)return;
+    probe=new Image();probes.set(job.image,probe);probe.decoding='async';
+    const request=attempt?job.src+(job.src.includes('?')?'&':'?')+'iris-retry='+attempt:job.src;
+    let timer;
+    try{
+     await Promise.race([new Promise((resolve,reject)=>{
+      probe.onload=()=>probe.naturalWidth?resolve():reject(new Error('empty image'));
+      probe.onerror=()=>reject(new Error('image request failed'));probe.src=request;
+     }),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('image timeout')),12000);})]);
+     // Safari can reject decode() even after a successful image load.
+     try{await probe.decode();}catch{}
+     loaded=probe.complete&&probe.naturalWidth>0;
+    }catch{}finally{clearTimeout(timer);probe.onload=null;probe.onerror=null;}
+   }
+   if(!loaded)return;
+   if(job.image.isConnected&&versions.get(job.image)===job.version){job.image.src=probe.src;job.done=true;}
   }catch{}finally{
    if(probe&&probes.get(job.image)===probe)probes.delete(job.image);
    job.resolve(!!job.done);running--;pump();
@@ -43,6 +58,9 @@
   if(previous)cancel(image);
   images.set(image,{base,near:previous?.near||false});image.dataset.resolutionBase=base;
   if(phone)image.removeAttribute('srcset');
+  if(!previous)image.addEventListener('error',()=>{
+   const state=images.get(image);if(state)swap(image,source(state.base));
+  });
   image.src=source(base);near.observe(image);
  }
  const scan=node=>{if(node.nodeType!==1)return;if(node.matches('img'))register(node);node.querySelectorAll('img').forEach(register);};

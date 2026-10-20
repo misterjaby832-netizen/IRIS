@@ -5,20 +5,26 @@ const blank='data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 const subscribe=callback=>resolution?resolution.subscribe(callback):()=>{};
 const snapshot=()=>resolution?.tier||'portrait';
 let refinementQueue=Promise.resolve();
+const releases=new WeakMap();
 const nearby=mobile?new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{
  target.dataset.phoneVisible=isIntersecting?'1':'0';
- if(!isIntersecting){resolution?.cancel(target);target.src=blank;target.classList.remove('phone-image-ready');return;}
+ clearTimeout(releases.get(target));
+ if(!isIntersecting){releases.set(target,setTimeout(()=>{
+  if(target.dataset.phoneVisible==='1')return;
+  const rect=target.getBoundingClientRect();
+  if(rect.bottom < -innerHeight*3 || rect.top > innerHeight*4){resolution?.cancel(target);target.src=blank;target.classList.remove('phone-image-ready');}
+ },20000));return;}
  const reveal=async()=>{
   if(!target.isConnected||target.dataset.phoneVisible!=='1')return;
   const src=target.dataset.phoneSrc;
   let decoded=false;
   if(resolution)decoded=await resolution.swap(target,src);
   else{target.src=src;try{await target.decode();decoded=true;}catch{}}
-  if(decoded&&target.isConnected&&target.dataset.phoneVisible==='1'&&target.getAttribute('src')===src)target.classList.add('phone-image-ready');
+  if(decoded&&target.isConnected&&target.dataset.phoneVisible==='1'&&target.naturalWidth>0)target.classList.add('phone-image-ready');
  };
  if(target.closest('.cal-detail'))refinementQueue=refinementQueue.then(reveal,reveal);
  else reveal();
-}),{rootMargin:'350px 0px'}):null;
+}),{rootMargin:'1200px 0px'}):null;
 export default function ResponsiveImage({src,loading,fetchPriority,...props}){
  useSyncExternalStore(subscribe,snapshot);
  const ref=useRef(null);
@@ -31,5 +37,5 @@ export default function ResponsiveImage({src,loading,fetchPriority,...props}){
   nearby.observe(image);
   return()=>{image.dataset.phoneVisible='0';resolution?.cancel(image);nearby.unobserve(image);};
  },[critical,optimized]);
- return <img {...props} ref={ref} data-resolution-managed="" src={critical?(mobile?initial:optimized):blank} data-phone-src={critical?undefined:optimized} loading={critical?(loading||'eager'):'eager'} fetchPriority={fetchPriority} decoding="async"/>;
+ return <img {...props} onError={()=>{if(ref.current)resolution?.swap(ref.current,optimized);}} ref={ref} data-resolution-managed="" src={critical?(mobile?initial:optimized):blank} data-phone-src={critical?undefined:optimized} loading={critical?(loading||'eager'):'eager'} fetchPriority={fetchPriority} decoding="async"/>;
 }
