@@ -79,3 +79,8 @@ body:has(.nav-arriving) .iris-menu-toggle,body:has(.nav-arriving) .iris-contact{
  .kfc-cover-ground::before{background-image:linear-gradient(to left,#121212,transparent 70%),url('/kfc/assets/mobile/kfc-cover-ground-latest.webp')}
  .kfc-cover-extension::before{background-image:url('/kfc/assets/mobile/kfc-cover-ground-latest.webp')}
 }
+@media(max-width:1024px) and (orientation:landscape){
+ .phone-light .kfc-cover-ground::before{background-image:linear-gradient(to left,#121212,transparent 70%),url('/kfc/assets/mobile-landscape/kfc-cover-ground-latest.webp')}
+ .phone-light .kfc-cover-extension::before{background-image:url('/kfc/assets/mobile-landscape/kfc-cover-ground-latest.webp')}
+ .phone-light .kfc-cover-extension span::before{background-image:linear-gradient(#9b917b38,#9b917b38),url('/kfc/assets/mobile-landscape/kfc-cover-ground-latest.webp')}
+}

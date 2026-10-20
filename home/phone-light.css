@@ -1,5 +1,5 @@
 /* Phone-only performance mode. Original artwork coordinates remain unchanged. */
-@media(max-width:767px){
+@media(max-width:1024px){
  .phone-light main *{animation:none!important;transition:none!important;will-change:auto!important}
  .phone-light main,.phone-light .panerai-artboard,.phone-light .cluebie-artboard,.phone-light .current-artboard>div{isolation:auto}
  .phone-light .panerai-frame,.phone-light .scroll-panel{translate:none!important;--frame-lag:0px!important;will-change:auto!important;backface-visibility:visible;isolation:auto}
@@ -26,20 +26,20 @@
  .phone-light .cluebie-fullscreen-host .cluebie-video-controls button svg{width:24px;height:24px}
  .phone-light .cluebie-fullscreen-host .cluebie-video-time{font-size:12px}
 }
-@media(max-width:767px){
+@media(max-width:1024px){
  .phone-light .kfc-cover-ground,.phone-light .kfc-cover-brand,.phone-light .kfc-cover-number,.phone-light .kfc-cover-base,.phone-light .kfc-cover-glass,.phone-light .kfc-cover-copy,.phone-light .kfc-cover-extension{opacity:1!important;translate:none!important}
  .phone-light #frame-334-890 [data-node-id="347:1155"],.phone-light #frame-334-890 [data-node-id="347:1159"],.phone-light #frame-334-890 [data-node-id="347:1154"],.phone-light #frame-334-890 [data-node-id="347:1168"]>*,.phone-light #frame-334-890 [data-node-id="1834:14"]>*,.phone-light #frame-334-890 [data-node-id="347:1157"],
  .phone-light .cluebie-artboard [data-node-id="477:109"],.phone-light .cluebie-artboard [data-node-id="477:113"],.phone-light .cluebie-artboard [data-node-id="477:118"],.phone-light .cluebie-artboard [data-node-id="477:123"]>*,.phone-light .cluebie-artboard [data-node-id="1840:61"]>*,.phone-light .cluebie-artboard [data-node-id="477:111"]{opacity:1!important;translate:none!important}
 }
 
-@media(max-width:767px){
+@media(max-width:1024px){
  .phone-light main .current-feed-track{animation:phone-feed-up var(--duration) linear infinite!important;animation-play-state:paused!important}
  .phone-light main.feed-active .current-feed-track{animation-play-state:running!important}
  .phone-light main .cal-detail img{opacity:0;transition:opacity .45s ease!important}
  .phone-light main .cal-detail img.phone-image-ready{opacity:1}
 }
 @keyframes phone-feed-up{from{transform:translateY(var(--offset))}to{transform:translateY(calc(var(--offset) - var(--loop)))}}
-@media(max-width:767px) and (prefers-reduced-motion:reduce){
+@media(max-width:1024px) and (prefers-reduced-motion:reduce){
  .phone-light main .current-feed-track{animation:none!important;transform:translateY(var(--offset))}
  .phone-light main .cal-detail img{transition:none!important}
 }

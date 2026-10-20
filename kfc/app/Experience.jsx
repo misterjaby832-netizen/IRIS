@@ -10,7 +10,7 @@ import usePanelStack from './usePanelStack';
 import SiteNavigation from './SiteNavigation';
 
 const WIDTH=1440,HEIGHT=12678;
-const phoneLight=matchMedia('(max-width:767px)').matches;
+const phoneLight=window.irisResolution?.phone||matchMedia('(max-width:767px), (pointer:coarse) and (max-width:1024px)').matches;
 const asset=name=>'/kfc/assets/oct-'+name+'.png';
 const columns=[['img4001318','img4001317','img4001321','img4001328','img685116'],['img4001322','img4001319','img4001329','img4001320','img685115'],['imgRectangle1','img4001323','imgRectangle2','img4001332','img685118'],['img4001324','img4001325','img4001331','img4001330','img685117'],['img4001326','img4001327','img4001333','img4001334','img685119']];
 export function Feed(){return <section className="current-feed" aria-label="KFC社媒创意视觉信息流">{columns.map((items,i)=><div className="current-feed-column" key={i} style={{'--offset':[68.5,30.5,89.5,30.5,68.5][i]+'px','--loop':items.length*381+'px','--duration':[58,69,63,72,61][i]+'s'}}><div className="current-feed-track">{(phoneLight?[0,1]:[0,1,2]).map(copy=><div className="current-feed-set" key={copy} aria-hidden={copy?true:undefined}>{items.map((name,j)=><ResponsiveImage key={name} src={asset(name)} alt={copy?'':'KFC 创意视觉 '+(i+1)+'-'+(j+1)} width="274" height="366" decoding="async"/>)}</div>)}</div></div>)}</section>}
