@@ -75,7 +75,7 @@ function syncFilm(){seek.value=film.duration?Math.round(film.currentTime/film.du
 syncFilm();film.addEventListener('volumechange',syncFilm);film.addEventListener('timeupdate',syncFilm);film.addEventListener('loadedmetadata',syncFilm);film.addEventListener('play',syncFilm);film.addEventListener('pause',syncFilm);
 seek.addEventListener('input',()=>{if(film.duration)film.currentTime=seek.value/1000*film.duration;});
 player.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{switch(button.dataset.action){case 'play':film.paused?film.play().catch(()=>{}):film.pause();break;case 'mute':film.muted=!film.muted;break;case 'fullscreen':fullscreenHost.open?closePlayerFullscreen():openPlayerFullscreen();break;}syncFilm();}));
-new IntersectionObserver(entries=>{if(fullscreenHost.open)return;if(!matchMedia('(max-width:767px)').matches&&entries[0].intersectionRatio>.55){film.play().catch(()=>{});}else film.pause();},{threshold:[0,.55]}).observe(opening);
+if(!matchMedia('(max-width:767px)').matches)new IntersectionObserver(entries=>{if(fullscreenHost.open)return;if(entries[0].intersectionRatio>.55){film.play().catch(()=>{});}else film.pause();},{threshold:[0,.55]}).observe(opening);
 
 // 各分区只改进入过程，完整展开后仍回到设计稿位置。
 const theme=cluebieArtboard.querySelector('[data-node-id="114:4"]');
