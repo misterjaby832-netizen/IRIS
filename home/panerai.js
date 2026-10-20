@@ -55,6 +55,13 @@ if(audience){
  }
  const people=layer(['671:13','673:2','671:29','671:30','673:3','671:38','671:39','673:4','671:47','671:48','692:906'],['671:13']);
  const outer=layer(['681:3','681:8','681:9','681:10','681:11','699:10474','699:10475'],['699:10474','699:10475']);
+ // Scale only the diagram; leave heading, age and source in the original canvas.
+ const diagram=document.createElement('div');diagram.className='audience-diagram';
+ canvas.append(diagram);
+ diagram.append(canvas.querySelector('[data-node-id="703:2"]'),people,outer);
+ diagram.querySelectorAll('p').forEach(text=>{
+  text.classList.add(/[\u3400-\u9fff]/.test(text.textContent)?'audience-zh':'audience-en');
+ });
  const clamp=value=>Math.max(0,Math.min(1,value));
  const ease=value=>value*value*(3-2*value);
  let progress=0,target=0,animation=0;

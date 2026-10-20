@@ -2598,11 +2598,17 @@ html:not(.iris-entry-ready),html:not(.iris-entry-ready) body{background:#121212!
 
 /* Keep the cover metadata on the same vertical axis. */
 #frame-334-890 [data-node-id="1834:18"]{left:77.57%;right:19.24%;width:auto;text-align:left;font-size:23px}
-/* Fit the audience diagram as a centered composition; compensate text size. */
-[data-node-id="471:64"] [data-node-id="671:2"]{scale:.62;transform-origin:720px 704px;overflow:visible}
-[data-node-id="471:64"] [data-node-id="671:2"] p{scale:1.612903;transform-origin:left center}
+/* Shrink only the diagram, preserving the surrounding metadata coordinates. */
+.audience-diagram{position:absolute;inset:0;scale:.62;transform-origin:720px 704px}
+.audience-diagram p{scale:1.612903;transform-origin:left center;line-height:1.45}
+.audience-diagram p.text-center{transform-origin:center center}
+.audience-diagram div:has(>p){overflow:visible}
+.audience-diagram p.audience-zh{font-size:16px}
+.audience-diagram p.audience-en{font-size:12px;translate:0 9px}
+.audience-diagram p[data-node-id="682:79"],.audience-diagram p[data-node-id="682:80"]{transform-origin:center center}
+.audience-diagram p[data-node-id="682:79"]{translate:0 -5px;font-size:12px}
+.audience-diagram p[data-node-id="682:80"]{font-size:20px;line-height:1.4}
 
-[data-node-id="471:64"] [data-node-id="671:2"] p.text-center{transform-origin:center center}
-[data-node-id="471:64"] [data-node-id="671:2"] div:has(>p){overflow:visible}
+.audience-diagram .audience-expand-layer{opacity:1!important;scale:1!important}
 
-[data-node-id="471:64"] p[data-node-id="682:79"],[data-node-id="471:64"] p[data-node-id="682:80"]{transform-origin:center center}
+.audience-diagram p.audience-en.text-center{translate:-50% 9px}
