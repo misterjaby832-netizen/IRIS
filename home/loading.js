@@ -61,7 +61,7 @@
    if(window.parent===window)root.classList.add('iris-handoff-active');
    setupBuffering();return;
   }
-  const caseEntry=/\/(panerai|cluebie)(\.html)?\/?$/.test(location.pathname);
+  const caseEntry=/\/(kfc|panerai|cluebie)(\.html)?\/?$/.test(location.pathname);
   const previousOverflow=document.body.style.overflow;
   const loaderStarted=performance.now();
   const loader=makeLoader();let completed=false;

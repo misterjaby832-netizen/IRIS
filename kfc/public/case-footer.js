@@ -3,7 +3,8 @@
  const main=location.origin+'/';
  const kfc=main+'kfc/';
  const current=document.querySelector('.panerai-shell')?'panerai':document.querySelector('.cluebie-shell')?'cluebie':'kfc';
- const next=current==='kfc'?main+'panerai.html':current==='panerai'?main+'cluebie.html':kfc;
+ const nextDesktop=current==='kfc'?main+'panerai.html':current==='panerai'?main+'cluebie.html':kfc;
+ const next=document.documentElement.classList.contains('mobile-case')?main+'mobile/'+(current==='kfc'?'panerai':current==='panerai'?'cluebie':'kfc')+'.html':nextDesktop;
  const name=current==='kfc'?'Panerai':current==='panerai'?'Cluebie':'KFC';
  const style=document.createElement('link');style.rel='stylesheet';style.href=new URL('case-footer.css?v=18',document.currentScript.src).href;document.head.append(style);
  const menu=document.querySelector('#iris-menu');
