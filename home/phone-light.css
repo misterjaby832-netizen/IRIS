@@ -23,3 +23,15 @@
  .phone-light main .current-feed-track{animation:none!important;transform:translateY(var(--offset))}
  .phone-light main .cal-detail img{transition:none!important}
 }
+
+/* Keep artwork placement; simplify phone decoration to opacity and small offsets. */
+@media(max-width:1024px){
+ .phone-light main *{will-change:auto!important}
+ .phone-light .account-food,.phone-light .account-phone-motion{transform:none!important;opacity:1}
+ .phone-light .display-mockup,.phone-light .cluebie-decor-lag{translate:none!important}
+ .phone-light .structure-reveal [data-node-id]{filter:none!important}
+ .phone-light .scene-caption,.phone-light .display-copy-fade{filter:none!important}
+ .phone-light .current-keyword,.phone-light .message-bubble{animation:none!important;transform:none!important;opacity:var(--bubble-opacity,1)!important}
+ .phone-light .account-food,.phone-light .account-phone-motion{animation:phone-simple-fade .5s ease both!important}
+}
+@keyframes phone-simple-fade{from{opacity:0}to{opacity:1}}

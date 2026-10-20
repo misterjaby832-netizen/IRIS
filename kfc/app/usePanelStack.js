@@ -2,6 +2,7 @@
 import {useLayoutEffect} from 'react';
 export default function usePanelStack(host,paused){
  useLayoutEffect(()=>{
+  const phone=window.irisResolution?.phone;
   const root=host.current,panels=[...root.querySelectorAll('.scroll-panel')];
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');let frame=0,lastTime=0;
   const offsets=panels.map(()=>0);
@@ -14,10 +15,10 @@ export default function usePanelStack(host,paused){
     const next=panels[i+1],boundary=next?top+Number(next.dataset.panelStart)*scale:Infinity;
     // Small speed difference only. No pinning, scaling, shading or new edges.
     const distance=Math.max(0,vh*.8-boundary);
-    const target=Math.min(distance*.12,Math.min(72,vh*.1))/scale;
+    const target=Math.min(distance*.12,Math.min(phone?18:72,vh*.1))/scale;
     offsets[i]+=(target-offsets[i])*blend;
     if(Math.abs(target-offsets[i])>.05)settling=true;else offsets[i]=target;
-    panel.style.transform=`translate3d(0,${offsets[i].toFixed(3)}px,0)`;
+    panel.style.transform=phone?`translateY(${offsets[i].toFixed(3)}px)`:`translate3d(0,${offsets[i].toFixed(3)}px,0)`;
     panel.style.willChange=boundary>-vh*.3&&boundary<vh?'transform':'auto';
    });
    if(settling)frame=requestAnimationFrame(draw);
