@@ -6,7 +6,8 @@ const cluebieFrames=[...cluebieArtboard.querySelector('[data-node-id="114:2"]').
 let cluebieScale=1;
 function cluebieResize(){cluebieScale=cluebieShell.clientWidth/1440;cluebieArtboard.style.transform=`scale(${cluebieScale})`;cluebieShell.style.height=`${16881*cluebieScale}px`;}
 new ResizeObserver(cluebieResize).observe(cluebieShell);cluebieResize();
-const cluebieReduced=matchMedia('(prefers-reduced-motion: reduce)');
+const cluebieReducedPreference=matchMedia('(prefers-reduced-motion: reduce)');
+const cluebieReduced={get matches(){return matchMedia('(max-width:767px)').matches||cluebieReducedPreference.matches;},addEventListener:(...args)=>cluebieReducedPreference.addEventListener(...args)};
 let cluebiePrevious=scrollY,cluebieLag=0,cluebieFrame=0,cluebieLast=0;
 function cluebieDraw(time){const elapsed=Math.min(40,time-cluebieLast||16)/16.67;cluebieLast=time;cluebieLag*=Math.pow(cluebieMotion.settle,elapsed);if(Math.abs(cluebieLag)<.1||cluebieReduced.matches)cluebieLag=0;cluebieArtboard.style.setProperty('--cover-extension',`${Math.max(0,cluebieLag)/cluebieScale}px`);cluebieFrames.forEach((node,index)=>node.style.setProperty('--frame-lag',`${index===0||node.dataset.nodeId==='2347:111'?0:cluebieLag/cluebieScale}px`));cluebieFrame=cluebieLag?requestAnimationFrame(cluebieDraw):0;}
 addEventListener('scroll',()=>{const delta=scrollY-cluebiePrevious;cluebiePrevious=scrollY;if(cluebieReduced.matches)return;cluebieLag=Math.max(-cluebieMotion.maxOffset,Math.min(cluebieMotion.maxOffset,cluebieLag+delta*cluebieMotion.strength));if(!cluebieFrame)cluebieFrame=requestAnimationFrame(cluebieDraw);},{passive:true});
@@ -22,7 +23,7 @@ cluebieDialog.addEventListener('cancel',event=>{event.preventDefault();cluebieCl
 
 // 影片：进入视野自动静音播放；悬停、聚焦或触摸时显示完整控制。
 const opening=cluebieArtboard.querySelector('[data-node-id="114:3"]');
-opening.innerHTML=`<div class="cluebie-player" tabindex="0" aria-label="周一拯救计划影片"><video playsinline muted preload="metadata" poster="assets/cluebie/opening-1.webp"><source src="assets/cluebie/final-film-1080p.mp4" type="video/mp4"></video><div class="cluebie-video-controls"><button type="button" data-action="play" aria-label="播放或暂停">▶</button><span class="cluebie-video-time">0:00 / 0:00</span><input type="range" min="0" max="1000" value="0" aria-label="影片进度"><button type="button" data-action="mute" aria-label="开启或关闭声音">静音</button><button type="button" data-action="fullscreen" aria-label="全屏播放">全屏</button></div></div>`;
+opening.innerHTML=`<div class="cluebie-player" tabindex="0" aria-label="周一拯救计划影片"><video playsinline muted preload="${matchMedia('(max-width:767px)').matches?'none':'metadata'}" poster="assets/cluebie/opening-1.webp"><source src="assets/cluebie/final-film-1080p.mp4" type="video/mp4"></video><div class="cluebie-video-controls"><button type="button" data-action="play" aria-label="播放或暂停">▶</button><span class="cluebie-video-time">0:00 / 0:00</span><input type="range" min="0" max="1000" value="0" aria-label="影片进度"><button type="button" data-action="mute" aria-label="开启或关闭声音">静音</button><button type="button" data-action="fullscreen" aria-label="全屏播放">全屏</button></div></div>`;
 const player=opening.querySelector('.cluebie-player'),film=player.querySelector('video'),seek=player.querySelector('input');
 const videoIcon=(content)=>`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${content}</svg>`;
 const speaker='<path d="M11 5 6 9H3v6h3l5 4Z"/>';
@@ -74,7 +75,7 @@ function syncFilm(){seek.value=film.duration?Math.round(film.currentTime/film.du
 syncFilm();film.addEventListener('volumechange',syncFilm);film.addEventListener('timeupdate',syncFilm);film.addEventListener('loadedmetadata',syncFilm);film.addEventListener('play',syncFilm);film.addEventListener('pause',syncFilm);
 seek.addEventListener('input',()=>{if(film.duration)film.currentTime=seek.value/1000*film.duration;});
 player.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{switch(button.dataset.action){case 'play':film.paused?film.play().catch(()=>{}):film.pause();break;case 'mute':film.muted=!film.muted;break;case 'fullscreen':fullscreenHost.open?closePlayerFullscreen():openPlayerFullscreen();break;}syncFilm();}));
-new IntersectionObserver(entries=>{if(fullscreenHost.open)return;if(entries[0].intersectionRatio>.55){film.play().catch(()=>{});}else film.pause();},{threshold:[0,.55]}).observe(opening);
+new IntersectionObserver(entries=>{if(fullscreenHost.open)return;if(!matchMedia('(max-width:767px)').matches&&entries[0].intersectionRatio>.55){film.play().catch(()=>{});}else film.pause();},{threshold:[0,.55]}).observe(opening);
 
 // 各分区只改进入过程，完整展开后仍回到设计稿位置。
 const theme=cluebieArtboard.querySelector('[data-node-id="114:4"]');
@@ -87,7 +88,7 @@ const themeDecor=['2301:106','2301:109','2301:107','1069:194','1069:193','2226:2
 themeDecor.forEach(node=>node.classList.add('cluebie-decor-lag'));
 let decorOffset=0,decorPrevious=scrollY,decorFrame=0;
 function settleDecor(){decorOffset*=.88;if(Math.abs(decorOffset)<.1||cluebieReduced.matches)decorOffset=0;themeDecor.forEach((node,i)=>node.style.transform=`translateY(${decorOffset*(.7+i*.16)/cluebieScale}px)`);decorFrame=decorOffset?requestAnimationFrame(settleDecor):0;}
-addEventListener('scroll',()=>{const delta=scrollY-decorPrevious;decorPrevious=scrollY;decorOffset=Math.max(-35,Math.min(35,decorOffset+delta*.16));if(!decorFrame)decorFrame=requestAnimationFrame(settleDecor);},{passive:true});
+addEventListener('scroll',()=>{if(cluebieReduced.matches)return;const delta=scrollY-decorPrevious;decorPrevious=scrollY;decorOffset=Math.max(-35,Math.min(35,decorOffset+delta*.16));if(!decorFrame)decorFrame=requestAnimationFrame(settleDecor);},{passive:true});
 ['2339:12','2339:13','555:157','825:35992'].forEach((id,i)=>reveal(assets.querySelector(`[data-node-id="${id}"]`),i*170));
 ['126:24','126:25','126:26'].forEach((id,i)=>reveal(craft.querySelector(`[data-node-id="${id}"]`),i*160));
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('is-visible',entry.isIntersecting)),{rootMargin:'0px 0px -8% 0px',threshold:.1});

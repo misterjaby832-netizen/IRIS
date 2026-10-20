@@ -10,9 +10,10 @@ import usePanelStack from './usePanelStack';
 import SiteNavigation from './SiteNavigation';
 
 const WIDTH=1440,HEIGHT=12678;
+const phoneLight=matchMedia('(max-width:767px)').matches;
 const asset=name=>'/kfc/assets/oct-'+name+'.png';
 const columns=[['img4001318','img4001317','img4001321','img4001328','img685116'],['img4001322','img4001319','img4001329','img4001320','img685115'],['imgRectangle1','img4001323','imgRectangle2','img4001332','img685118'],['img4001324','img4001325','img4001331','img4001330','img685117'],['img4001326','img4001327','img4001333','img4001334','img685119']];
-export function Feed(){return <section className="current-feed" aria-label="KFC社媒创意视觉信息流">{columns.map((items,i)=><div className="current-feed-column" key={i} style={{'--offset':[68.5,30.5,89.5,30.5,68.5][i]+'px','--loop':items.length*381+'px','--duration':[58,69,63,72,61][i]+'s'}}><div className="current-feed-track">{[0,1,2].map(copy=><div className="current-feed-set" key={copy} aria-hidden={copy?true:undefined}>{items.map((name,j)=><ResponsiveImage key={name} src={asset(name)} alt={copy?'':'KFC 创意视觉 '+(i+1)+'-'+(j+1)} width="274" height="366" decoding="async"/>)}</div>)}</div></div>)}</section>}
+export function Feed(){return <section className="current-feed" aria-label="KFC社媒创意视觉信息流">{columns.map((items,i)=><div className="current-feed-column" key={i} style={{'--offset':[68.5,30.5,89.5,30.5,68.5][i]+'px','--loop':items.length*381+'px','--duration':[58,69,63,72,61][i]+'s'}}><div className="current-feed-track">{(phoneLight?[0]:[0,1,2]).map(copy=><div className="current-feed-set" key={copy} aria-hidden={copy?true:undefined}>{items.map((name,j)=><ResponsiveImage key={name} src={asset(name)} alt={copy?'':'KFC 创意视觉 '+(i+1)+'-'+(j+1)} width="274" height="366" decoding="async"/>)}</div>)}</div></div>)}</section>}
 export function Glass(){return <div className="current-glass-field" aria-hidden="true"><div className="current-blob primary"/><div className="current-blob secondary"/></div>}
 export function Keywords(){const [open,setOpen]=useState(false);return <><div className="current-keyword idea"><button className="current-keyword-button" type="button">#脑洞感</button></div><div className="current-keyword brand"><button className="current-keyword-button" type="button">#品牌辨识度</button></div><div className="current-keyword meme"><button className="current-keyword-button" aria-expanded={open} aria-controls="meme-message" onClick={()=>setOpen(v=>!v)} type="button">#梗文化</button>{open&&<span className="current-meme" id="meme-message" role="status">疯四。</span>}</div></>}
 
@@ -80,6 +81,7 @@ export default function Experience(){
  },[]);
  // 红色精修卡片按滚动速度轻微滞后，停下后自然回到设计稿位置。
  useEffect(()=>{
+  if(phoneLight)return;
   const root=host.current,cards=[...root.querySelectorAll('.cal-detail')];
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   let frame=0,lastY=window.scrollY,lastTime=0;
@@ -109,7 +111,7 @@ export default function Experience(){
   const stickers=[...root.querySelectorAll('.account-food')];
   const phone=root.querySelector('.account-phone-motion');
   const finish=()=>{root.classList.add('account-done');stickers.forEach(e=>e.style.opacity='1');if(phone){phone.style.opacity='1';phone.style.transform='none';}};
-  if(reduced.matches){finish();return;}
+  if(reduced.matches||phoneLight){finish();return;}
   stickers.forEach(e=>e.style.opacity='0');if(phone){phone.style.opacity='0';phone.style.transform='translateY(850px)';}
   const play=async()=>{
    if(played||stopped)return;played=true;
@@ -137,5 +139,5 @@ export default function Experience(){
   const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){group.classList.add('messages-visible');observer.disconnect();}},{threshold:.18});observer.observe(group);
   return()=>{observer.disconnect();group.classList.remove('messages-visible');bubbles.forEach(el=>el.classList.remove('message-bubble'));};
  },[]);
- return <><SiteNavigation/>{!coverReady&&<div ref={loader} className="kfc-entry-loader" role="status" aria-label="正在加载作品"><div className="kfc-loader-backdrop"/><div className="iris-loading-mark"><div className="iris-loading-logo" dangerouslySetInnerHTML={{__html:loadingLogoSvg}}/><ResponsiveImage className="iris-loading-still" src="/kfc/assets/oct-nav-iris.png" alt=""/></div>{loadError&&<div className="iris-load-error"><p>部分素材加载失败，请重试</p><button onClick={()=>location.reload()}>重新加载</button></div>}</div>}<main ref={host} className={'portfolio current-portfolio '+(paused?'motion-paused':'')}><h1 className="sr-only">KFC · 社交媒体 AIGC 视觉创作</h1><div className="current-shell" style={{height:HEIGHT*scale}}><div className="current-artboard" style={{transform:'scale('+scale+')'}}><CurrentDesign/></div></div><Button variant="ghost" className="motion-toggle" aria-pressed={paused} onClick={()=>setPaused(v=>!v)}>{paused?'播放动效':'暂停动效'}</Button><span className="build-label">KFC / 导航10</span></main></>;
+ return <><SiteNavigation/>{!coverReady&&<div ref={loader} className="kfc-entry-loader" role="status" aria-label="正在加载作品"><div className="kfc-loader-backdrop"/><div className="iris-loading-mark"><div className="iris-loading-logo" dangerouslySetInnerHTML={{__html:loadingLogoSvg}}/><ResponsiveImage className="iris-loading-still" src="/kfc/assets/oct-nav-iris.png" alt=""/></div>{loadError&&<div className="iris-load-error"><p>部分素材加载失败，请重试</p><button onClick={()=>location.reload()}>重新加载</button></div>}</div>}<main ref={host} className={'portfolio current-portfolio '+(paused?'motion-paused':'')}><h1 className="sr-only">KFC · 社交媒体 AIGC 视觉创作</h1><div className="current-shell" style={{height:HEIGHT*scale}}><div className="current-artboard" style={{transform:'scale('+scale+')'}}><CurrentDesign/></div></div>{!phoneLight&&<Button variant="ghost" className="motion-toggle" aria-pressed={paused} onClick={()=>setPaused(v=>!v)}>{paused?'播放动效':'暂停动效'}</Button>}<span className="build-label">KFC / 导航10</span></main></>;
 }
