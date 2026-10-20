@@ -2,6 +2,7 @@
 import {useLayoutEffect} from 'react';
 export default function usePanelStack(host,paused){
  useLayoutEffect(()=>{
+  if(matchMedia('(max-width: 767px)').matches)return;
   const root=host.current,panels=[...root.querySelectorAll('.scroll-panel')];
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');let frame=0,lastTime=0;
   const offsets=panels.map(()=>0);

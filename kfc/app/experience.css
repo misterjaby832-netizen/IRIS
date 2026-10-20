@@ -177,3 +177,11 @@ html:has(.case-cover-ready),html:has(.case-cover-ready) body{background:#121212!
 /* Latest Figma 29:316: continuous red-to-charcoal beneath the moving feed. */
 .current-portfolio .feed-gradient{position:absolute;left:0;top:10887px;width:1440px;height:1511px;pointer-events:none}
 .feed-gradient img{display:block;width:1440px;height:1511px}
+
+/* Avoid allocating full design-size compositing surfaces on phone WebKit. */
+@media(max-width:767px){
+ .current-artboard>div{isolation:auto}
+ .scroll-panel{transform:none!important;will-change:auto!important}
+ .current-feed-track{will-change:auto}
+ .account-food,.account-phone-motion,.cal-detail{will-change:auto}
+}

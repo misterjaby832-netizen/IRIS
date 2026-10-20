@@ -72,3 +72,10 @@ body:has(.nav-arriving) .iris-menu-toggle,body:has(.nav-arriving) .iris-contact{
 /* Reveal a composed cover behind a single fading veil, without flight or slides. */
 .iris-fade-entry :is(#frame-334-890,[data-node-id="477:106"],.kfc-cover,.iris-navigation),
 .iris-fade-entry :is(#frame-334-890,[data-node-id="477:106"],.kfc-cover,.iris-navigation) *{animation:none!important;opacity:1!important;translate:none!important}
+@media(max-width:767px){
+ .kfc-cover-extension span::before{background-image:linear-gradient(#9b917b38,#9b917b38),url('/kfc/assets/mobile/kfc-cover-ground-latest.webp')}
+}
+@media(max-width:767px){
+ .kfc-cover-ground::before{background-image:linear-gradient(to left,#121212,transparent 70%),url('/kfc/assets/mobile/kfc-cover-ground-latest.webp')}
+ .kfc-cover-extension::before{background-image:url('/kfc/assets/mobile/kfc-cover-ground-latest.webp')}
+}

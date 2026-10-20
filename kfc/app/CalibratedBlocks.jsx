@@ -1,3 +1,4 @@
+import ResponsiveImage from "./ResponsiveImage";
 import InteractiveCards from './InteractiveCards';
 const at=(left,top,width,extra={})=>({position:'absolute',left,top,width,...extra});
 const asset=(name,ext='png')=>'/kfc/assets/oct-'+name+'.'+ext;
@@ -23,11 +24,11 @@ export function HorrorCopy(){return <div className="cal-copy cal-horror-copy" st
 
 export function CardSet(){return <InteractiveCards/>}
 
-export function MainComparison(){return <div className="cal-main-comparison" style={at(0,6959,1440,{height:920})}><img src={asset('imgBefore')} alt="精修前的鸡块巨石阵"/><img src={asset('imgAfter')} alt="精修后的鸡块巨石阵"/></div>}
+export function MainComparison(){return <div className="cal-main-comparison" style={at(0,6959,1440,{height:920})}><ResponsiveImage src={asset('imgBefore')} alt="精修前的鸡块巨石阵"/><ResponsiveImage src={asset('imgAfter')} alt="精修后的鸡块巨石阵"/></div>}
 
 // 每个红色精修卡片独立移动；图片、标题、说明一起保持设计稿位置。
 export function DetailPanel({kind}){const details={food:[8113,'food','产品质感','还原产品原本的纹理、色泽与边缘'],background:[9184,'background','背景质感','规避AI生成细碎化纹理，实拍素材调整光照条件等质感'],brand:[10249,'brand','品牌细节','出现具体品牌标识及文字的内容，需确保与真实包装一致']};const [y,name,title,copy]=details[kind];return <section className="cal-detail" aria-label={title} style={at(256,y,927,{height:923})}>
- <h3>{'{ '+title+' }'}</h3><div className="cal-detail-image"><img src={'/kfc/assets/oct-proof-'+name+'.webp'} alt={title+'的前后精修对比'} width="670" height="670"/></div>
+ <h3>{'{ '+title+' }'}</h3><div className="cal-detail-image"><ResponsiveImage src={'/kfc/assets/oct-proof-'+name+'.webp'} alt={title+'的前后精修对比'} width="670" height="670"/></div>
  <p>{copy}</p>
  </section>}
 

@@ -1,3 +1,4 @@
+import ResponsiveImage from "./ResponsiveImage";
 "use client";
 import {useState} from 'react';
 
@@ -15,8 +16,8 @@ export default function AccountScene(){
   <svg width="0" height="0" aria-hidden="true"><defs><clipPath id="account-wave" clipPathUnits="objectBoundingBox"><path d="M1 0H0V.933628C0 .933628 .182478 .78509 .523358 .933628C.864236 1.08217 1 .934991 1 .934991V0Z"/></clipPath></defs></svg>
   <div className="account-clipped">
    <div className="account-stripes" aria-hidden="true"><i/><i/><i/></div>
-   <div className="account-phone"><div className="account-phone-motion"><img src="/kfc/assets/oct-img8.png" alt="肯德基小红书账号页面"/></div></div>
-   {foods.map(([name,x,y,w,h,iw,ih,angle,skew,img])=><div key={name} className="account-food" data-food={name} style={{left:x,top:y,width:w,height:h}}><div className="account-food-rotation" style={{width:iw,height:ih,transform:`rotate(${angle}deg) skewX(${skew}deg)`}}><img src={'/kfc/assets/oct-'+img+'.png'} alt=""/></div></div>)}
+   <div className="account-phone"><div className="account-phone-motion"><ResponsiveImage src="/kfc/assets/oct-img8.png" alt="肯德基小红书账号页面"/></div></div>
+   {foods.map(([name,x,y,w,h,iw,ih,angle,skew,img])=><div key={name} className="account-food" data-food={name} style={{left:x,top:y,width:w,height:h}}><div className="account-food-rotation" style={{width:iw,height:ih,transform:`rotate(${angle}deg) skewX(${skew}deg)`}}><ResponsiveImage src={'/kfc/assets/oct-'+img+'.png'} alt=""/></div></div>)}
   </div>
   <h2 className="account-heading" data-node-id="8:8">账号调性关键词<br/><span>KEYWORDS</span></h2>
   {[

@@ -1,3 +1,4 @@
+import ResponsiveImage from "./ResponsiveImage";
 import KfcCover from "./KfcCover";
 import ScrollPanel from "./ScrollPanel";
 import ScreeningGallery from "./ScreeningGallery";
@@ -99,7 +100,7 @@ export default function CalibratedDesign() {
     <div className="relative size-full" data-node-id="29:2" data-name="KFC"><ScrollPanel start={0} end={882} index={0} color="#a49b87"><KfcCover/></ScrollPanel>
 <ScrollPanel start={882} end={1733} index={1} color="#e4002c"><div className="absolute contents left-0 top-[882px]" data-node-id="400:1311" data-name="02 · 项目背景 / 概述与信息流">
         <div className="-translate-x-1/2 absolute h-[851px] left-1/2 top-[882px] w-[1440px]" data-node-id="400:1312" data-name="背景 / 红色底与过渡">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" src="/kfc/assets/figma-background-current.svg" />
+          <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src="/kfc/assets/figma-background-current.svg" />
         </div>
         <Overview/>
       </div></ScrollPanel>
@@ -133,7 +134,7 @@ export default function CalibratedDesign() {
         <div className="absolute h-[129px] left-[91px] overflow-clip top-[4168px] w-[601px]" data-node-id="102:2" data-name="推文表现 · 小红书">
           <div className="absolute h-[116px] left-0 overflow-clip top-[13px] w-[187px]" data-node-id="102:3" data-name="点赞">
             <div className="absolute left-0 size-[24px] top-0" data-node-id="104:2" data-name="点赞图标">
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
+              <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
             </div>
           </div>
           <p className="[word-break:break-word] absolute font-kfc font-normal leading-[normal] left-[45px] not-italic text-[#252525] text-[34px] top-[2px] whitespace-nowrap" data-node-id="104:4">
@@ -141,7 +142,7 @@ export default function CalibratedDesign() {
           </p>
           <div className="absolute h-[158px] left-[-71px] overflow-clip top-[-29px] w-[443px]" data-node-id="102:4" data-name="收藏" />
           <div className="absolute left-[151px] size-[24px] top-[13px]" data-node-id="104:6" data-name="收藏图标">
-            <img alt="" className="absolute block inset-0 max-w-none size-full" src={img2} />
+            <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img2} />
           </div>
           <p className="[word-break:break-word] absolute font-kfc font-normal leading-[normal] left-[193px] not-italic text-[#252525] text-[34px] top-0 whitespace-nowrap" data-node-id="104:8">
             3,438
@@ -151,7 +152,7 @@ export default function CalibratedDesign() {
           </p>
           <div className="absolute h-[116px] left-[326px] overflow-clip top-[13px] w-[89px]" data-node-id="102:5" data-name="评论">
             <div className="absolute left-0 size-[24px] top-0" data-node-id="104:10" data-name="评论图标">
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img6} />
+              <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img6} />
             </div>
           </div>
           <p className="[word-break:break-word] absolute font-kfc font-light h-[38px] leading-[normal] left-0 not-italic text-[#8c8c8c] text-[14px] top-[56px] w-[384px]" data-node-id="105:2">
@@ -162,39 +163,39 @@ export default function CalibratedDesign() {
         <div className="absolute h-[634px] left-[765px] overflow-clip top-[3646px] w-[617px]" data-node-id="837:11" data-name="message-square">
           <div className="absolute h-[74px] left-[91px] rounded-[5px] shadow-[2px_4px_16.4px_0px_rgba(0,0,0,0.25)] top-[357px] w-[333px]" data-node-id="901:3" data-name="截屏2026-10-07 21.34.48 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[5px]">
-              <img alt="" className="absolute h-[145.71%] left-[-1.32%] max-w-none top-[-5.71%] w-[112.17%]" src={img202610072134481} />
+              <ResponsiveImage alt="" className="absolute h-[145.71%] left-[-1.32%] max-w-none top-[-5.71%] w-[112.17%]" src={img202610072134481} />
             </div>
           </div>
           <div className="absolute h-[74px] left-[43px] rounded-[5px] shadow-[2px_4px_16.4px_0px_rgba(0,0,0,0.25)] top-[176px] w-[154px]" data-node-id="901:4" data-name="截屏2026-10-07 21.40.35 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[5px]">
-              <img alt="" className="absolute h-[271.3%] left-[-5.55%] max-w-none top-[-10.03%] w-[237.04%]" src={img202610072140351} />
+              <ResponsiveImage alt="" className="absolute h-[271.3%] left-[-5.55%] max-w-none top-[-10.03%] w-[237.04%]" src={img202610072140351} />
             </div>
           </div>
           <div className="absolute h-[74px] left-[355px] rounded-[5px] shadow-[2px_4px_16.4px_0px_rgba(0,0,0,0.25)] top-[299px] w-[219px]" data-node-id="901:6" data-name="截屏2026-10-07 21.40.19 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[5px]">
-              <img alt="" className="absolute h-[126.2%] left-[-3.13%] max-w-none top-[-0.02%] w-[158.33%]" src={img202610072140191} />
+              <ResponsiveImage alt="" className="absolute h-[126.2%] left-[-3.13%] max-w-none top-[-0.02%] w-[158.33%]" src={img202610072140191} />
             </div>
           </div>
           <div className="absolute h-[74px] left-[155px] opacity-74 rounded-[5px] shadow-[2px_4px_16.4px_0px_rgba(0,0,0,0.25)] top-[119px] w-[194px]" data-node-id="901:17" data-name="截屏2026-10-07 21.40.10 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[5px]">
-              <img alt="" className="absolute h-[132.61%] left-[-5.39%] max-w-none top-0 w-[201.72%]" src={img202610072140101} />
+              <ResponsiveImage alt="" className="absolute h-[132.61%] left-[-5.39%] max-w-none top-0 w-[201.72%]" src={img202610072140101} />
             </div>
           </div>
           <div className="absolute h-[74px] left-[155px] rounded-[5px] shadow-[2px_4px_16.4px_0px_rgba(0,0,0,0.25)] top-[238px] w-[225px]" data-node-id="901:18" data-name="截屏2026-10-07 21.59.59 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[5px]">
-              <img alt="" className="absolute h-[132.18%] left-[-5.59%] max-w-none top-[-0.05%] w-[163.35%]" src={img202610072159591} />
+              <ResponsiveImage alt="" className="absolute h-[132.18%] left-[-5.59%] max-w-none top-[-0.05%] w-[163.35%]" src={img202610072159591} />
             </div>
           </div>
           <div className="absolute h-[74px] left-[370px] rounded-[5px] shadow-[2px_4px_16.4px_0px_rgba(0,0,0,0.25)] top-[176px] w-[184px]" data-node-id="1040:119" data-name="截屏2026-10-09 13.49.54 1">
             <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[5px]">
-              <img alt="" className="absolute h-[125.37%] left-[-4.89%] max-w-none top-0 w-[190.02%]" src={img202610091349541} />
+              <ResponsiveImage alt="" className="absolute h-[125.37%] left-[-4.89%] max-w-none top-0 w-[190.02%]" src={img202610091349541} />
             </div>
           </div>
         </div>
         <div className="absolute contents left-[1299px] top-[4169px]" data-node-id="418:1385" data-name="二维码01">
           <a href="http://xhslink.com/m/6NVkVfr03p0" target="_blank" rel="noopener noreferrer" title="点击查看小红书原帖" aria-label="打开地理奇观系列小红书原帖" className="absolute left-[1299px] overflow-clip rounded-[5px] size-[75px] top-[4169px]" data-node-id="416:1381">
             <div className="absolute h-[1486px] left-[-349px] top-[-1339px] w-[476px]" data-node-id="416:1380" data-name="178954125900-756 1">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1789541259007561} />
+              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1789541259007561} />
             </div>
           </a>
         </div>
@@ -208,19 +209,19 @@ export default function CalibratedDesign() {
         
         <Principle kind="talk"/>
         <div className="absolute h-[63px] left-[-32px] top-[4451px] w-[1504px]" data-node-id="1016:32" data-name="装饰">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+          <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
         </div>
       </div><AccountScene/><div className="absolute contents left-[-1px] top-[4600px]" data-node-id="941:71" data-name="06 · 爆款复刻 / 纳凉特辑">
         <div className="-translate-x-1/2 absolute bg-[#242424] h-[671px] left-1/2 top-[4600px] w-[1442px]" data-node-id="451:29" data-name="背景图形 / 06 · 爆款复刻 / 纳凉特辑 · 451-29" />
         <div className="absolute contents left-[133.19px] top-[4688px]" data-node-id="949:33" data-name="案例配图 / 纳凉特辑">
           <div className="absolute h-[466.236px] left-[133.19px] top-[4688px] w-[349.823px]" data-node-id="451:26" data-name="后室 1">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img4001322} />
+            <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img4001322} />
           </div>
           <div className="absolute h-[233px] left-[483.67px] top-[4688px] w-[174.242px]" data-node-id="451:37" data-name="闪亮 2">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle1} />
+            <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle1} />
           </div>
           <div className="absolute h-[233px] left-[483.67px] top-[4921px] w-[174.242px]" data-node-id="451:39" data-name="寂静岭 2">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img4001318} />
+            <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img4001318} />
           </div>
         </div>
         <div className="-translate-y-1/2 absolute contents left-[778.08px] top-[calc(50%-1637.5px)]" data-node-id="949:32" data-name="案例解读 / 标题·文案·数据">
@@ -241,14 +242,14 @@ export default function CalibratedDesign() {
           <div className="absolute contents left-[1240.74px] top-[5074.98px]" data-node-id="941:52" data-name="组合 / 案例解读 / 标题·文案·数据 · 941-52">
             <a href="http://xhslink.com/m/AmaXSLtQrE" target="_blank" rel="noopener noreferrer" title="点击查看小红书原帖" aria-label="打开纳凉特辑小红书原帖" className="absolute left-[1240.74px] overflow-clip rounded-[5px] size-[65.045px] top-[5074.98px]" data-node-id="941:53">
               <div className="absolute h-[1289px] left-[-302px] top-[-1162px] w-[412.672px]" data-node-id="941:64" data-name="178954125900-756 1">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" height="1289" src={img1789541259007562} width="412.672" />
+                <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" height="1289" src={img1789541259007562} width="412.672" />
               </div>
             </a>
           </div>
           <div className="absolute h-[129px] left-[778.08px] overflow-clip top-[5067px] w-[601.835px]" data-node-id="949:11" data-name="推文表现 · 小红书">
             <div className="absolute h-[116px] left-0 overflow-clip top-[13px] w-[187px]" data-node-id="949:12" data-name="点赞">
               <div className="absolute left-0 size-[24px] top-0" data-node-id="949:13" data-name="点赞图标">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
+                <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
               </div>
               <p className="[word-break:break-word] absolute font-kfc font-normal leading-[normal] left-[45px] not-italic text-[34px] text-white top-[-11px] whitespace-nowrap" data-node-id="949:18">
                 1.5万
@@ -256,7 +257,7 @@ export default function CalibratedDesign() {
             </div>
             <div className="absolute h-[158px] left-[-71px] overflow-clip top-[-29px] w-[443px]" data-node-id="949:19" data-name="收藏" />
             <div className="absolute left-[151px] size-[24px] top-[13px]" data-node-id="949:21" data-name="收藏图标">
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={img2} />
+              <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img2} />
             </div>
             <p className="[word-break:break-word] absolute font-kfc font-normal leading-[normal] left-[193px] not-italic text-[34px] text-white top-0 whitespace-nowrap" data-node-id="949:23">
               954
@@ -266,7 +267,7 @@ export default function CalibratedDesign() {
             </p>
             <div className="absolute h-[116px] left-[285px] overflow-clip top-[13px] w-[89px]" data-node-id="949:25" data-name="评论">
               <div className="absolute left-0 size-[24px] top-0" data-node-id="949:26" data-name="评论图标">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" src={img6} />
+                <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" src={img6} />
               </div>
             </div>
           </div>
@@ -284,163 +285,163 @@ export default function CalibratedDesign() {
                         <div className="content-stretch flex flex-col gap-[16px] items-start overflow-clip relative" data-name="图片阵列 / 15°规则斜排">
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="273:2" data-name="图片阵列 1">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:3" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:4" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:5" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:6" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:7" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:8" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:9" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                           </div>
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="273:10" data-name="图片阵列 2">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:11" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:12" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:13" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:14" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:15" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:16" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:17" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                           </div>
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="277:10" data-name="边缘延展 6">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:11" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:12" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle3} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle3} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:13" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle4} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle4} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:14" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle5} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle5} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:15" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle6} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle6} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:16" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle3} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgRectangle3} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:17" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                           </div>
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="273:18" data-name="图片阵列 3">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:19" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:20" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:21" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:22" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:23" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:24" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:25" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img39} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img39} />
                             </div>
                           </div>
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="273:26" data-name="图片阵列 4">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:27" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:28" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:29" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:30" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:31" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:32" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:33" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                           </div>
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="273:34" data-name="图片阵列 5">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:35" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:36" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:37" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:38" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:39" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:40" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="273:41" data-name="淘汰过程图 / 3:4">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img38} />
                             </div>
                           </div>
                           <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="277:2" data-name="边缘延展 5">
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:3" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img35} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:4" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img34} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:5" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:6" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:7" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:8" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img37} />
                             </div>
                             <div className="h-[320px] relative shrink-0 w-[240px]" data-node-id="277:9" data-name="Rectangle">
-                              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
+                              <ResponsiveImage alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img36} />
                             </div>
                           </div>
                         </div>
@@ -456,14 +457,14 @@ export default function CalibratedDesign() {
             <div className="absolute contents inset-[48.24%_73.19%_48.85%_7.64%]" data-node-id="992:2" data-name="方案01 / 蛋挞梯田 · 图片与描边">
               <div className="absolute inset-[48.24%_73.19%_48.85%_7.64%]" data-node-id="29:167" data-name="方案01 / 蛋挞梯田·图片">
                 <div className="absolute inset-[-2.79%_-3.51%_-2.27%_-3.51%]">
-                  <img alt="" className="block max-w-none size-full" height="402.784" src={img01} width="295.4" />
+                  <ResponsiveImage alt="" className="block max-w-none size-full" height="402.784" src={img01} width="295.4" />
                 </div>
               </div>
             </div>
             <div className="absolute contents inset-[48.24%_29.58%_48.85%_51.25%]" data-node-id="992:4" data-name="方案03 / 陨石坑 · 图片与描边">
               <div className="absolute inset-[48.24%_29.58%_48.85%_51.25%]" data-node-id="29:189" data-name="方案03 / 原味鸡陨石坑·图片">
                 <div className="absolute inset-[-1.57%_-3.62%_-3.65%_-3.62%]">
-                  <img alt="" className="block max-w-none size-full" height="403.384" src={img03} width="296" />
+                  <ResponsiveImage alt="" className="block max-w-none size-full" height="403.384" src={img03} width="296" />
                 </div>
               </div>
             </div>
@@ -474,7 +475,7 @@ export default function CalibratedDesign() {
             <div className="absolute contents left-[72.85%] right-[7.99%] top-[6102.1px]" data-node-id="992:5" data-name="方案04 / 甜筒雪峰 · 图片与描边">
               <div className="absolute inset-[46.37%_7.99%_50.71%_72.85%]" data-node-id="29:200" data-name="方案04 / 甜筒雪峰·入选图片">
                 <div className="absolute inset-[-1.57%_-3.62%_-3.65%_-3.62%]">
-                  <img alt="" className="block max-w-none size-full" height="403.384" src={img04} width="296" />
+                  <ResponsiveImage alt="" className="block max-w-none size-full" height="403.384" src={img04} width="296" />
                 </div>
               </div>
               <div className="absolute contents left-[73.13%] right-[8.26%] top-[6529.24px]" data-node-id="1050:125" data-name="方案04">
@@ -488,7 +489,7 @@ export default function CalibratedDesign() {
                 </div>
                 <div className="-translate-y-1/2 absolute aspect-[19.999975204467773/20] left-[82.43%] right-[16.25%] top-[calc(50%-38.03px)]" data-node-id="1050:124" data-name="Vector">
                   <div className="absolute inset-[-7.89%]">
-                    <img alt="" className="block max-w-none size-full" src={imgVector} />
+                    <ResponsiveImage alt="" className="block max-w-none size-full" src={imgVector} />
                   </div>
                 </div>
               </div>
@@ -511,7 +512,7 @@ export default function CalibratedDesign() {
               </p>
               <div className="absolute contents inset-[46.35%_50.42%_49.34%_29.79%]" data-node-id="992:3" data-name="方案02 / 蛋挞火山 · 图片与描边">
                 <div className="absolute inset-[46.35%_51.04%_50.74%_29.79%]" data-node-id="29:178" data-name="方案02 / 蛋挞火山·图片">
-                  <img alt="" className="absolute block inset-0 max-w-none size-full" height="383.384" src={img02} width="276" />
+                  <ResponsiveImage alt="" className="absolute block inset-0 max-w-none size-full" height="383.384" src={img02} width="276" />
                 </div>
                 <div className="[word-break:break-word] absolute font-kfc font-normal inset-[50.02%_50.42%_49.34%_30.42%] leading-[0] not-italic text-[#767676] text-[18px]" data-node-id="29:186">
                   <p className="leading-[27px] mb-0">淘汰原因：</p>
@@ -569,6 +570,6 @@ export default function CalibratedDesign() {
   <div className="refinement-labels" aria-hidden="true"><span style={{top:8015,left:82}}>BEFORE</span><span style={{top:8015,right:83}}>AFTER</span><span style={{top:11229,left:82}}>BEFORE</span><span style={{top:11229,right:83}}>AFTER</span></div>
   <p className="refinement-caption" style={{top:11314}}>DETAILS MAKE THE DIFFERENCE.</p>
 </ScrollPanel>
-<ScrollPanel start={11383} end={12398} index={6} color="#121212"><div className="feed-gradient" data-node-id="29:316" aria-hidden="true"><img src="/kfc/assets/figma-feed-gradient-latest.svg" alt=""/></div><Feed/></ScrollPanel></div>
+<ScrollPanel start={11383} end={12398} index={6} color="#121212"><div className="feed-gradient" data-node-id="29:316" aria-hidden="true"><ResponsiveImage src="/kfc/assets/figma-feed-gradient-latest.svg" alt=""/></div><Feed/></ScrollPanel></div>
   );
 }

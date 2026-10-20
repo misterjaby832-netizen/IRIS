@@ -1,3 +1,4 @@
+import ResponsiveImage from "./ResponsiveImage";
 "use client";
 import {useEffect,useRef,useState} from 'react';
 import {createPortal} from 'react-dom';
@@ -17,11 +18,11 @@ export function Gallery({initial,onClose,items=cards,magnify=false}){
  return createPortal(<dialog ref={dialog} className="visual-gallery" aria-label="地理奇观图片预览" onCancel={e=>{e.preventDefault();onClose();}} onClick={e=>{if(e.target===e.currentTarget)onClose();}} onKeyDown={e=>{if(e.key==='ArrowRight'){e.preventDefault();step(1);}if(e.key==='ArrowLeft'){e.preventDefault();step(-1);}}}>
   <button className="gallery-close" aria-label="关闭图片预览" onClick={onClose} autoFocus>×</button>
   <button className="gallery-arrow previous" aria-label="上一张" onClick={()=>step(-1)}>←</button>
-  <figure className="gallery-figure"><div className={'gallery-image-wrap'+(magnify?' magnifiable':'')} onPointerMove={move} onPointerLeave={()=>setLens(null)}><img key={index} src={src(items[index][0])} alt={items[index][1]}/>{magnify&&lens&&<div className="image-magnifier" aria-hidden="true" style={{left:lens.x,top:lens.y,backgroundImage:`url(${src(items[index][0])})`,backgroundSize:`${lens.w*2.5}px ${lens.h*2.5}px`,backgroundPosition:`${90-lens.x*2.5}px ${90-lens.y*2.5}px`}}/>}</div><figcaption aria-live="polite">{items[index][1]}<span>{index+1} / {items.length}</span></figcaption></figure>
+  <figure className="gallery-figure"><div className={'gallery-image-wrap'+(magnify?' magnifiable':'')} onPointerMove={move} onPointerLeave={()=>setLens(null)}><ResponsiveImage key={index} src={src(items[index][0])} alt={items[index][1]}/>{magnify&&lens&&<div className="image-magnifier" aria-hidden="true" style={{left:lens.x,top:lens.y,backgroundImage:`url(${src(items[index][0])})`,backgroundSize:`${lens.w*2.5}px ${lens.h*2.5}px`,backgroundPosition:`${90-lens.x*2.5}px ${90-lens.y*2.5}px`}}/>}</div><figcaption aria-live="polite">{items[index][1]}<span>{index+1} / {items.length}</span></figcaption></figure>
   <button className="gallery-arrow next" aria-label="下一张" onClick={()=>step(1)}>→</button>
  </dialog>,document.body);
 }
 export default function InteractiveCards(){
  const [open,setOpen]=useState(null);
- return <div className="cal-cards" aria-label="地理奇观系列">{cards.map(([name,title,x,y,angle],i)=><button key={name} className="visual-card" aria-label={'放大查看：'+title} onClick={()=>setOpen(i)} style={{position:'absolute',left:x,top:y,width:301,height:400,'--card-rotation':angle+'deg'}}><img alt={title} src={src(name)}/></button>)}{open!==null&&<Gallery initial={open} onClose={()=>setOpen(null)}/>}</div>;
+ return <div className="cal-cards" aria-label="地理奇观系列">{cards.map(([name,title,x,y,angle],i)=><button key={name} className="visual-card" aria-label={'放大查看：'+title} onClick={()=>setOpen(i)} style={{position:'absolute',left:x,top:y,width:301,height:400,'--card-rotation':angle+'deg'}}><ResponsiveImage alt={title} src={src(name)}/></button>)}{open!==null&&<Gallery initial={open} onClose={()=>setOpen(null)}/>}</div>;
 }

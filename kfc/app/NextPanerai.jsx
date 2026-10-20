@@ -1,3 +1,4 @@
+import ResponsiveImage from "./ResponsiveImage";
 "use client";
 import {useEffect,useRef,useState} from 'react';
 import './next-panerai.css';
@@ -25,7 +26,7 @@ export default function NextPanerai({paused}) {
  return <section ref={section} id="next-case" className="next-panerai" aria-label="下一个项目：PANERAI">
   <a className="next-panerai-cover" href={href} aria-label="进入 PANERAI 沛纳海案例">
    <div className="next-panerai-sand"/>
-   <img className="next-panerai-logo" src="/kfc/assets/panerai-cover-img011Vectorized.svg" alt="PANERAI"/>
+   <ResponsiveImage className="next-panerai-logo" src="/kfc/assets/panerai-cover-img011Vectorized.svg" alt="PANERAI"/>
    <div className="next-panerai-glass"/>
    <span className="next-panerai-number">02</span>
    <span className="next-panerai-selected">SELECTED</span>
