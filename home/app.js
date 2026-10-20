@@ -95,6 +95,7 @@ if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') {
 
 // 首页离场：整体左移淡出，预取目标文档，不再放大卡片。
 let projectOpening = false;
+let projectExitAnimations = [];
 let navigationLoaderTimer;
 const prefetched = new Set();
 function prepareCase(link) {
@@ -114,7 +115,7 @@ document.querySelectorAll('.project-grid article a[href]').forEach(link => {
     event.preventDefault(); projectOpening = true; prepareCase(link);
     try {sessionStorage.setItem('iris-case-entry', JSON.stringify({url:link.href,time:Date.now()}));} catch {}
     const surfaces = [...document.body.children].filter(el => !['SCRIPT','STYLE'].includes(el.tagName));
-    const animations = surfaces.map(el => el.animate([
+    const animations = projectExitAnimations = surfaces.map(el => el.animate([
       {translate:'0px 0px',opacity:1},
       {translate:'-56px 0px',opacity:0}
     ], {duration:300,easing:'cubic-bezier(.4,0,.2,1)',fill:'forwards'}));
@@ -126,7 +127,9 @@ document.querySelectorAll('.project-grid article a[href]').forEach(link => {
 });
 addEventListener('pageshow', event => {
   clearTimeout(navigationLoaderTimer);
-  document.body.getAnimations({subtree:true}).filter(a => a.effect?.getTiming().fill === 'forwards').forEach(a => a.cancel());
+  // Only undo this page's departure; never cancel an in-progress loader.
+  projectExitAnimations.forEach(animation => animation.cancel());
+  projectExitAnimations = [];
   projectOpening = false;
   if(event.persisted)document.querySelectorAll('.iris-page-loader.is-loading').forEach(loader=>loader.remove());
 });
@@ -197,4 +200,26 @@ if (!reduced.matches) {
     lag = Math.max(-85, Math.min(85, lag + delta * .32));
     if (!lagFrame) lagFrame = requestAnimationFrame(drawLag);
   }, {passive: true});
+}
+
+// iOS may refuse autoplay. Keep the poster and offer a user-gesture play action.
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.muted = true; heroVideo.defaultMuted = true; heroVideo.playsInline = true;
+  heroVideo.setAttribute('webkit-playsinline', '');
+  const playButton = document.createElement('button');
+  playButton.className = 'hero-play'; playButton.type = 'button';
+  playButton.textContent = '播放封面动画'; playButton.hidden = true;
+  heroVideo.parentElement.append(playButton);
+  function playHero() {
+    heroVideo.muted = true;
+    const result = heroVideo.play();
+    if (result) result.then(() => { playButton.hidden = true; }).catch(() => { playButton.hidden = false; });
+  }
+  window.irisPlayHero = () => { try { heroVideo.currentTime = 0; } catch {} playHero(); };
+  playButton.addEventListener('click', playHero);
+  heroVideo.addEventListener('playing', () => { playButton.hidden = true; });
+  document.addEventListener('touchend', () => {
+    if (document.documentElement.classList.contains('iris-entry-ready') && heroVideo.paused && !heroVideo.ended) playHero();
+  }, { once: true, passive: true });
 }

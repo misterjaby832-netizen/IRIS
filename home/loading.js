@@ -67,7 +67,7 @@
   const loader=makeLoader();let completed=false;
   setupBuffering();
   if(caseEntry){root.classList.add('iris-case-entry');document.body.style.overflow='hidden';}
-  const complete=()=>{if(completed)return;completed=true;root.classList.add('iris-entry-ready','nav-arriving','nav-logo-ready','case-cover-ready');document.body.style.overflow=previousOverflow;loader.remove();const intro=document.querySelector('.hero-video');if(intro){try{intro.currentTime=0;}catch{}intro.play().catch(()=>{});}};
+  const complete=()=>{if(completed)return;completed=true;root.classList.add('iris-entry-ready','nav-arriving','nav-logo-ready','case-cover-ready');document.body.style.overflow=previousOverflow;const nav=document.querySelector('.navigation .wordmark');if(nav)nav.style.visibility='';loader.remove();const intro=document.querySelector('.hero-video');if(intro){if(window.irisPlayHero)window.irisPlayHero();else{intro.muted=true;intro.playsInline=true;intro.play().catch(()=>{});}}};
   const shellParams=new URLSearchParams(location.search);
   if(window.parent!==window&&shellParams.get('iris-shell')==='1'){
    const parentOrigin=shellParams.get('iris-parent'),token=shellParams.get('iris-token');
@@ -134,8 +134,9 @@
    await flight.finished;
    await backdrop.animate([{opacity:1},{opacity:0}],{duration:350,easing:'ease',fill:'forwards'}).finished;
    if(!completed){completed=true;root.classList.add('iris-entry-ready','nav-logo-ready');document.body.style.overflow=previousOverflow;loader.remove();}
-  }).catch(()=>{
+  }).catch(error=>{
    if(completed)return;
+   if(error?.name==='AbortError'){complete();return;}
    const message=document.createElement('p');message.textContent='部分素材加载失败，请重试';
    const retry=document.createElement('button');retry.textContent='重新加载';retry.onclick=()=>location.reload();loader.append(message,retry);
   });
